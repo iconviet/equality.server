@@ -1,8 +1,6 @@
 ﻿@page "/fetchdata"
-@inject HttpClient Http
-
+@inherits PageBase
 <h1>Weather forecast</h1>
-
 <p>This component demonstrates fetching data from the server.</p>
 
 @if (forecasts == null)
@@ -36,11 +34,6 @@ else
 
 @code {
     private WeatherForecast[] forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("static/json/weather.json");
-    }
 
     public class WeatherForecast
     {

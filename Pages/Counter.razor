@@ -1,12 +1,25 @@
 ﻿@page "/counter"
+@inherits PageBase
 <h1>Counter</h1>
-<p>Current count: @currentCount</p>
+<p>Current count: @_count</p>
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 @code {
-    private int currentCount = 0;
+    private int _count;
 
     private void IncrementCount()
     {
-        currentCount++;
+        _count++;
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Subscriptions.Add(Observable.Interval(TimeSpan.FromSeconds(2)).Subscribe(x =>
+            {
+                _count++;
+                StateHasChanged();
+            }));
+        }
     }
 }

@@ -1,4 +1,18 @@
 ﻿@page "/"
-<h1>Hello, world!</h1>
+@inherits PageBase
+<h1>Hello, world! @_blockHeight.ToString()</h1>
 Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+    private long _blockHeight;
+
+    protected override void OnInitialized()
+    {
+        Subscriptions.Add(Observable.Interval(TimeSpan.FromSeconds(2)).Subscribe(async x =>
+        {
+            var block = await IconService.GetLastBlockAsync();
+            _blockHeight = block.Height;
+            StateHasChanged();
+        }));
+    }
+}
