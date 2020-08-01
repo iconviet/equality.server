@@ -3,11 +3,11 @@ using Lykke.Icon.Sdk.Transport.JsonRpc;
 
 namespace IconCps.Blazor.Clients
 {
-    public class IissInfoRpc
+    public class IissInfoResponse
     {
         private readonly RpcObject _properties;
 
-        public IissInfoRpc(RpcObject properties)
+        public IissInfoResponse(RpcObject properties)
         {
             _properties = properties;
         }
