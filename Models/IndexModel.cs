@@ -1,5 +1,4 @@
-﻿using ReactiveUI;
-using System;
+﻿using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 
@@ -16,7 +15,6 @@ namespace IconCps.Blazor.Models
                 var client = new IconServiceClient();
                 var block = await client.GetLastBlockAsync();
                 BlockHeight = block.Height;
-                this.RaisePropertyChanged(nameof(BlockHeight));
             }).DisposeWith(Composite);
         }
     }
