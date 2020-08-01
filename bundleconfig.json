@@ -1,0 +1,24 @@
+﻿[
+  {
+    "minify": { "enabled": false },
+    "inputFiles": [
+      "wwwroot/static/css/fa-*.min.css",
+      "wwwroot/static/css/bootstrap.min.css"
+    ],
+    "outputFileName": "wwwroot/static/css/bundle.min.css"
+  },
+  {
+    "minify": { "enabled": false },
+    "inputFiles": [
+      "wwwroot/static/js/linq.min.js",
+      "wwwroot/static/js/jquery.min.js",
+      "wwwroot/static/js/popper.min.js",
+      "wwwroot/static/js/jquery-ui.min.js",
+      "wwwroot/static/js/bootstrap.min.js",
+      "wwwroot/static/js/clipboard.min.js",
+      "wwwroot/static/js/animate-number.min.js",
+      "wwwroot/static/js/animate-number.extend.min.js"
+    ],
+    "outputFileName": "wwwroot/static/js/bundle.min.js"
+  }
+]
