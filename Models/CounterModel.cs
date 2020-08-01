@@ -14,7 +14,7 @@ namespace IconCps.Blazor.Models
         {
             Increment = ReactiveCommand.CreateFromTask(IncrementCount);
 
-            _count = Increment.ToProperty(this, x => x.CurrentCount, scheduler: RxApp.MainThreadScheduler);
+            _count = Increment.ToProperty(this, x => x.CurrentCount);
         }
 
         public int CurrentCount => _count.Value;

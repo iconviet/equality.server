@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace IconCps.Blazor
 {
@@ -10,7 +9,6 @@ namespace IconCps.Blazor
         {
             var builder = WebAssemblyHostBuilder.CreateDefault();
             builder.RootComponents.Add<App>("app");
-            builder.Services.AddScoped(x => new IconServiceClient());
             await builder.Build().RunAsync();
         }
     }
