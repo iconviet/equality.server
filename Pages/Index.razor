@@ -8,7 +8,7 @@ Welcome to your new app.
 
     protected override void OnInitialized()
     {
-        Subscriptions.Add(Observable.Interval(TimeSpan.FromSeconds(2)).Subscribe(async x =>
+        Subscriptions.Add(Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(async x =>
         {
             var block = await IconService.GetLastBlockAsync();
             _blockHeight = block.Height;
