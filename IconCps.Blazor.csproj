@@ -12,6 +12,5 @@
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" />
     <PackageReference Include="ReactiveUI.Blazor" Version="11.5.6" />
     <PackageReference Include="ServiceStack.Text" Version="5.9.0" />
-    <PackageReference Include="Syncfusion.Blazor" Version="18.2.0.47" />
   </ItemGroup>
 </Project>
