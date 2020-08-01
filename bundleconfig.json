@@ -16,6 +16,7 @@
   {
     "minify": { "enabled": false },
     "inputFiles": [
+      "wwwroot/static/lib/gf-*.min.css",
       "wwwroot/static/lib/fa-*.min.css",
       "wwwroot/static/lib/bootstrap.min.css",
       "wwwroot/static/lib/open-iconic-bootstrap.min.css"
