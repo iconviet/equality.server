@@ -2,23 +2,24 @@
   {
     "minify": { "enabled": false },
     "inputFiles": [
-      "wwwroot/static/css/fa-*.min.css",
-      "wwwroot/static/css/bootstrap.min.css"
+      "wwwroot/static/lib/linq.min.js",
+      "wwwroot/static/lib/jquery.min.js",
+      "wwwroot/static/lib/popper.min.js",
+      "wwwroot/static/lib/jquery-ui.min.js",
+      "wwwroot/static/lib/bootstrap.min.js",
+      "wwwroot/static/lib/clipboard.min.js",
+      "wwwroot/static/lib/animate-number.min.js",
+      "wwwroot/static/lib/animate-number.extend.min.js"
     ],
-    "outputFileName": "wwwroot/static/css/bundle.min.css"
+    "outputFileName": "wwwroot/static/lib/bundle.min.js"
   },
   {
     "minify": { "enabled": false },
     "inputFiles": [
-      "wwwroot/static/js/linq.min.js",
-      "wwwroot/static/js/jquery.min.js",
-      "wwwroot/static/js/popper.min.js",
-      "wwwroot/static/js/jquery-ui.min.js",
-      "wwwroot/static/js/bootstrap.min.js",
-      "wwwroot/static/js/clipboard.min.js",
-      "wwwroot/static/js/animate-number.min.js",
-      "wwwroot/static/js/animate-number.extend.min.js"
+      "wwwroot/static/lib/fa-*.min.css",
+      "wwwroot/static/lib/bootstrap.min.css",
+      "wwwroot/static/lib/open-iconic-bootstrap.min.css"
     ],
-    "outputFileName": "wwwroot/static/js/bundle.min.js"
+    "outputFileName": "wwwroot/static/lib/bundle.min.css"
   }
 ]

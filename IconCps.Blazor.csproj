@@ -13,6 +13,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\static\img\" />
-    <Folder Include="wwwroot\static\scss\" />
   </ItemGroup>
 </Project>
