@@ -3,13 +3,13 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using IconCps.Blazor.Objects;
 
-namespace IconCps.Blazor
+namespace IconCps.Blazor.Clients
 {
-    public class IconServiceClient
+    public class JsonServiceClient
     {
         private readonly HttpClient _client;
 
-        public IconServiceClient()
+        public JsonServiceClient()
         {
             _client = new HttpClient
             {
@@ -17,7 +17,7 @@ namespace IconCps.Blazor
             };
         }
 
-        public async Task<Block> GetLastBlockAsync()
+        public async Task<Block> GetLastBlock()
         {
             var response = await _client.PostAsJsonAsync("/api/v3", new
             {

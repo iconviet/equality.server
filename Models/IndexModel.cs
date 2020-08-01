@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using IconCps.Blazor.Clients;
 
 namespace IconCps.Blazor.Models
 {
@@ -12,8 +13,8 @@ namespace IconCps.Blazor.Models
         {
             Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(async x =>
             {
-                var client = new IconServiceClient();
-                var block = await client.GetLastBlockAsync();
+                var client = new JsonServiceClient();
+                var block = await client.GetLastBlock();
                 BlockHeight = block.Height;
             }).DisposeWith(Composite);
         }

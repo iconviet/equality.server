@@ -1,4 +1,5 @@
 ﻿using System.Reactive;
+using IconCps.Blazor.Clients;
 using ReactiveUI;
 
 namespace IconCps.Blazor.Models
@@ -14,8 +15,8 @@ namespace IconCps.Blazor.Models
             Increment = ReactiveCommand.CreateFromTask(async () =>
             {
                 var client = new IconServiceClient();
-                var block = await client.GetLastBlockAsync();
-                Count = block.Height;
+                var block = await client.GetLastBlock();
+                Count = (long) block.GetHeight();
             });
         }
     }
