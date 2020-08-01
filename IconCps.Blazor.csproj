@@ -3,7 +3,6 @@
     <TargetFramework>net5.0</TargetFramework>
     <UseBlazorWebAssembly>true</UseBlazorWebAssembly>
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
-    <BlazorWebAssemblyEnableLinking>true</BlazorWebAssemblyEnableLinking>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
@@ -12,8 +11,5 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0-preview.7.20365.19" PrivateAssets="all" />
     <PackageReference Include="ServiceStack.Text" Version="5.9.0" />
     <PackageReference Include="Syncfusion.Blazor" Version="18.2.0.47" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\static\img\" />
   </ItemGroup>
 </Project>
