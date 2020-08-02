@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30323.103
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icon_Cps.Server", "Icon_Cps.Server.csproj", "{99F87D9A-DAA2-4185-99EA-422AA82F6557}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icon_Cps.Server", "Icon_Cps.Server/Icon_Cps.Server.csproj", "{99F87D9A-DAA2-4185-99EA-422AA82F6557}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
