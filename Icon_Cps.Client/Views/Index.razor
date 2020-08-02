@@ -6,4 +6,22 @@
 
 <img width="64" src="static/img/gl-icon-home-96.png" /> Welcome to ICON CPS.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<SfGrid ID="proposals_grid"
+        EnableHover="false"
+        EnableAltRow="false"
+        AllowSelection="false"
+        TValue="ExpandoObject"
+        GridLines="GridLine.Horizontal"
+        Query="@(new Query().AddParams("take", 13))">
+    <SfDataManager Url="/api/v1/proposals" Adaptor="Adaptors.WebApiAdaptor"></SfDataManager>
+    <GridColumns>
+        <GridColumn HeaderText="Address">
+        </GridColumn>
+        <GridColumn Width="95" HeaderText="Amount" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right">
+        </GridColumn>
+        <GridColumn Width="105" HeaderText="Chance" TextAlign="TextAlign.Center" HeaderTextAlign="TextAlign.Center">
+        </GridColumn>
+        <GridColumn Width="78" HeaderText="Since" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right">
+        </GridColumn>
+    </GridColumns>
+</SfGrid>

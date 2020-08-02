@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Syncfusion.Blazor;
 
 namespace Icon_Cps.Server
 {
@@ -12,6 +13,7 @@ namespace Icon_Cps.Server
             services.AddRazorPages();
             services.AddControllers();
             services.AddServerSideBlazor();
+            services.AddSyncfusionBlazor();
         }
 
         public void Configure(IApplicationBuilder application, IWebHostEnvironment environment)

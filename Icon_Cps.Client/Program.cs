@@ -6,6 +6,7 @@ using Autofac.Extensions.DependencyInjection;
 using Icon_Cps.Client.Models;
 using Icon_Cps.Client.Remote;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Syncfusion.Licensing;
 
 namespace Icon_Cps.Client
 {
@@ -23,6 +24,7 @@ namespace Icon_Cps.Client
         {
             builder.RegisterType<JsonServiceClient>().PropertiesAutowired();
             builder.RegisterType<IconServiceClient>().PropertiesAutowired();
+            SyncfusionLicenseProvider.RegisterLicense("MjgwOTEzQDMxMzgyZTMyMmUzMElJVFNKdEpLTk5IV2dGS3VUME9RUXpYVXdOeXJBZHpGc0kxaEU3UE1XczA9");
             builder.RegisterTypes(typeof(Program).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(ModelBase))).ToArray()).PropertiesAutowired();
         };
     }
