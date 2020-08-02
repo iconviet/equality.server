@@ -4,7 +4,7 @@ using ReactiveUI.Blazor;
 
 namespace Icon_Cps.Client.Views
 {
-    public abstract class ViewBase<T> : ReactiveComponentBase<T> where T : ModelBase<T>, new()
+    public abstract class ViewBase<T> : ReactiveComponentBase<T> where T : ModelBase, new()
     {
         protected CompositeDisposable Composite { get; set; }
 

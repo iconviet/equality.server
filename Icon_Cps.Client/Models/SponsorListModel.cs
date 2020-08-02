@@ -4,7 +4,7 @@ using ReactiveUI;
 
 namespace Icon_Cps.Client.Models
 {
-    public class SponsorListModel : ModelBase<SponsorListModel>
+    public class SponsorListModel : ModelBase
     {
         public long Count { get; set; }
 

@@ -4,7 +4,7 @@ using ReactiveUI;
 
 namespace Icon_Cps.Client.Models
 {
-    public abstract class ModelBase<T> : ReactiveObject, IDisposable
+    public abstract class ModelBase : ReactiveObject, IDisposable
     {
         protected CompositeDisposable Composite { get; set; }
 

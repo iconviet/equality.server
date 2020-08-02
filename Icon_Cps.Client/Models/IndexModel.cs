@@ -5,7 +5,7 @@ using Icon_Cps.Client.Remote;
 
 namespace Icon_Cps.Client.Models
 {
-    public class IndexModel : ModelBase<IndexModel>
+    public class IndexModel : ModelBase
     {
         public long BlockHeight { get; set; }
 
