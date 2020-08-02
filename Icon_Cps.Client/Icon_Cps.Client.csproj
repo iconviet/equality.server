@@ -7,7 +7,7 @@
     <UseBlazorWebAssembly>true</UseBlazorWebAssembly>
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <Copyright>Copyright © ICONVIET 2019-2020</Copyright>
-    <InvariantGlobalization>false</InvariantGlobalization>
+    <BlazorCacheBootResources>false</BlazorCacheBootResources>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
