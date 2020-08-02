@@ -9,12 +9,13 @@ namespace Icon_Cps.Client.Models
     {
         public long BlockHeight { get; set; }
 
+        public JsonServiceClient ServiceClient { get; set; }
+
         public IndexModel()
         {
             Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(async x =>
             {
-                var client = new JsonServiceClient();
-                var block = await client.GetLastBlock();
+                var block = await ServiceClient.GetLastBlock();
                 BlockHeight = block.Height;
             }).DisposeWith(Composite);
         }

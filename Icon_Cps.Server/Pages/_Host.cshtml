@@ -23,7 +23,7 @@
     <script src="static/app.min.js?v=0.0.0.0"></script>
     <script id="mode"></script>
     <script>
-        document.getElementById('mode').src = window.location.search.includes('mode=wasm') ? '_framework/blazor.webassembly.js' : '_framework/blazor.server.js';
+        document.getElementById('mode').src = window.location.search.includes('wasm') ? '_framework/blazor.webassembly.js' : '_framework/blazor.server.js';
     </script>
     </body>
 </html>
