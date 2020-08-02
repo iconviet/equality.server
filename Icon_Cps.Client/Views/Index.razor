@@ -6,22 +6,16 @@
 
 <img width="64" src="static/img/gl-icon-home-96.png" /> Welcome to ICON CPS.
 
-<SfGrid ID="proposals_grid"
-        EnableHover="false"
-        EnableAltRow="false"
+<SfGrid TValue="Proposal"
+        EnableHover="true"
+        EnableAltRow="true"
         AllowSelection="false"
-        TValue="ExpandoObject"
         GridLines="GridLine.Horizontal"
-        Query="@(new Query().AddParams("take", 13))">
-    <SfDataManager Url="/api/v1/proposals" Adaptor="Adaptors.WebApiAdaptor"></SfDataManager>
+        DataSource="ViewModel.Proposals">
     <GridColumns>
-        <GridColumn HeaderText="Address">
-        </GridColumn>
-        <GridColumn Width="95" HeaderText="Amount" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right">
-        </GridColumn>
-        <GridColumn Width="105" HeaderText="Chance" TextAlign="TextAlign.Center" HeaderTextAlign="TextAlign.Center">
-        </GridColumn>
-        <GridColumn Width="78" HeaderText="Since" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right">
-        </GridColumn>
+        <GridColumn Field="@nameof(Proposal.Title)" HeaderText="Title"></GridColumn>
+        <GridColumn Field="@nameof(Proposal.IcxRequested)" Format="N4" Width="120" HeaderText="ICX" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
+        <GridColumn Field="@nameof(Proposal.UsdRequested)" Format="C2" Width="120" HeaderText="USD" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
+        <GridColumn Width="78" HeaderText="Since" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
     </GridColumns>
 </SfGrid>
