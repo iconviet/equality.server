@@ -19,6 +19,7 @@ namespace Icon_Cps.Client
             builder.RootComponents.Add<App>("app");
             builder.Services.AddSyncfusionBlazor();
             builder.ConfigureContainer(new AutofacServiceProviderFactory(), ConfigureBuilder);
+            BackgroundJob.Start();
             await builder.Build().RunAsync();
         }
 

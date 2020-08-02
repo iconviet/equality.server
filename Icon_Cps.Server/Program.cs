@@ -1,4 +1,5 @@
 ﻿using Autofac.Extensions.DependencyInjection;
+using Icon_Cps.Client;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
@@ -12,6 +13,7 @@ namespace Icon_Cps.Server
             builder
                 .ConfigureWebHostDefaults(x => x.UseStartup<Startup>())
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory(Client.Program.ConfigureBuilder));
+            BackgroundJob.Start();
             builder.Build().Run();
         }
     }
