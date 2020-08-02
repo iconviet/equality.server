@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using IconCps.Blazor.Objects;
+using Icon_Cps.Server.Objects;
 
-namespace IconCps.Blazor.Clients
+namespace Icon_Cps.Server.Clients
 {
     public class JsonServiceClient
     {

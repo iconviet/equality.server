@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
-namespace IconCps.Blazor
+namespace Icon_Cps.Server
 {
     public class Program
     {

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using ServiceStack;
 
-namespace IconCps.Blazor.Clients
+namespace Icon_Cps.Server.Clients
 {
     public static class HttpClientExtensions
     {

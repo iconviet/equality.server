@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using Lykke.Icon.Sdk.Transport.JsonRpc;
 
-namespace IconCps.Blazor.Clients
+namespace Icon_Cps.Server.Clients
 {
     public class IissInfoResponse
     {

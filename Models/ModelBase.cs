@@ -2,7 +2,7 @@
 using System.Reactive.Disposables;
 using ReactiveUI;
 
-namespace IconCps.Blazor.Models
+namespace Icon_Cps.Server.Models
 {
     public abstract class ModelBase<T> : ReactiveObject, IDisposable
     {

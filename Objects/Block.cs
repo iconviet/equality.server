@@ -1,4 +1,4 @@
-﻿namespace IconCps.Blazor.Objects
+﻿namespace Icon_Cps.Server.Objects
 {
     public class Block
     {

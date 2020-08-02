@@ -1,8 +1,8 @@
 ﻿using System.Reactive;
-using IconCps.Blazor.Clients;
+using Icon_Cps.Server.Clients;
 using ReactiveUI;
 
-namespace IconCps.Blazor.Models
+namespace Icon_Cps.Server.Models
 {
     public class SponsorListModel : ModelBase<SponsorListModel>
     {

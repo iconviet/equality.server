@@ -2,7 +2,7 @@
 using Lykke.Icon.Sdk.Data;
 using Lykke.Icon.Sdk.Transport.JsonRpc;
 
-namespace IconCps.Blazor.Clients
+namespace Icon_Cps.Server.Clients
 {
     public class PRepResponse
     {

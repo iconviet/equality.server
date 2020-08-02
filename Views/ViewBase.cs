@@ -1,8 +1,8 @@
 ﻿using System.Reactive.Disposables;
-using IconCps.Blazor.Models;
+using Icon_Cps.Server.Models;
 using ReactiveUI.Blazor;
 
-namespace IconCps.Blazor.Views
+namespace Icon_Cps.Server.Views
 {
     public abstract class ViewBase<T> : ReactiveComponentBase<T> where T : ModelBase<T>, new()
     {

@@ -6,7 +6,7 @@ using Lykke.Icon.Sdk;
 using Lykke.Icon.Sdk.Data;
 using Lykke.Icon.Sdk.Transport.Http;
 
-namespace IconCps.Blazor.Clients
+namespace Icon_Cps.Server.Clients
 {
     public class IconServiceClient : IconService
     {

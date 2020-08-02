@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using IconCps.Blazor.Clients;
+using Icon_Cps.Server.Clients;
 
-namespace IconCps.Blazor.Models
+namespace Icon_Cps.Server.Models
 {
     public class IndexModel : ModelBase<IndexModel>
     {
