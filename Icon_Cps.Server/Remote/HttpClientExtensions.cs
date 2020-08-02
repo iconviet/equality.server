@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using ServiceStack;
 
-namespace Icon_Cps.Server.Clients
+namespace Icon_Cps.Server.Remote
 {
     public static class HttpClientExtensions
     {

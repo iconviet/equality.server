@@ -1,5 +1,5 @@
 ﻿using System.Reactive;
-using Icon_Cps.Server.Clients;
+using Icon_Cps.Server.Remote;
 using ReactiveUI;
 
 namespace Icon_Cps.Server.Models

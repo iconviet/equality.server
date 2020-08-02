@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Icon_Cps.Server.Clients;
+using Icon_Cps.Server.Remote;
 
 namespace Icon_Cps.Server.Models
 {

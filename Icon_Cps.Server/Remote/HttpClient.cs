@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Icon_Cps.Server.Clients
+namespace Icon_Cps.Server.Remote
 {
     public class HttpClient : System.Net.Http.HttpClient
     {

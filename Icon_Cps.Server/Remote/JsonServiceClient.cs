@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Icon_Cps.Server.Objects;
 
-namespace Icon_Cps.Server.Clients
+namespace Icon_Cps.Server.Remote
 {
     public class JsonServiceClient
     {
