@@ -2,7 +2,7 @@
 using Lykke.Icon.Sdk.Data;
 using Lykke.Icon.Sdk.Transport.JsonRpc;
 
-namespace Icon_Cps.Server.Remote
+namespace Icon_Cps.Client.Remote
 {
     public class PRepResponse
     {

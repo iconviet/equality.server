@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Icon_Cps.Server.Remote;
+using Icon_Cps.Client.Remote;
 
-namespace Icon_Cps.Server.Models
+namespace Icon_Cps.Client.Models
 {
     public class IndexModel : ModelBase<IndexModel>
     {

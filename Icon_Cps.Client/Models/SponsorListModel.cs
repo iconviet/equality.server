@@ -1,8 +1,8 @@
 ﻿using System.Reactive;
-using Icon_Cps.Server.Remote;
+using Icon_Cps.Client.Remote;
 using ReactiveUI;
 
-namespace Icon_Cps.Server.Models
+namespace Icon_Cps.Client.Models
 {
     public class SponsorListModel : ModelBase<SponsorListModel>
     {

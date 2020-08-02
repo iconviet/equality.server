@@ -1,4 +1,4 @@
-﻿namespace Icon_Cps.Server.Models
+﻿namespace Icon_Cps.Client.Models
 {
     public class ProposalListModel : ModelBase<ProposalListModel>
     {

@@ -1,4 +1,4 @@
-﻿namespace Icon_Cps.Server.Objects
+﻿namespace Icon_Cps.Client.Objects
 {
     public class Block
     {

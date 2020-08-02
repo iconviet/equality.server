@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
-namespace Icon_Cps.Server
+namespace Icon_Cps.Client
 {
     public class Program
     {
