@@ -1,5 +1,19 @@
 ﻿[
   {
+    "minify": { "enabled": true },
+    "inputFiles": [
+      "wwwroot/static/app.js"
+    ],
+    "outputFileName": "wwwroot/static/app.min.js"
+  },
+  {
+    "minify": { "enabled": true },
+    "inputFiles": [
+      "wwwroot/static/app.css"
+    ],
+    "outputFileName": "wwwroot/static/app.min.css"
+  },
+  {
     "minify": { "enabled": false },
     "inputFiles": [
       "wwwroot/static/lib/linq.min.js",
