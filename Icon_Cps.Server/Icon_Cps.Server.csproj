@@ -4,7 +4,6 @@
     <Authors>Tom Nuen</Authors>
     <LangVersion>latest</LangVersion>
     <TargetFramework>net5.0</TargetFramework>
-    <RuntimeIdentifier>linux-musl-x64</RuntimeIdentifier>
     <Copyright>Copyright © ICONVIET 2019-2020</Copyright>
     <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
