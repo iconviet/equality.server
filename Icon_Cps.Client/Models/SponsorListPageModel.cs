@@ -4,7 +4,7 @@ using ReactiveUI;
 
 namespace Icon_Cps.Client.Models
 {
-    public class SponsorListModel : ModelBase
+    public class SponsorListPageModel : PageModelBase
     {
         public long Count { get; set; }
 
@@ -12,7 +12,7 @@ namespace Icon_Cps.Client.Models
 
         public ReactiveCommand<Unit, Unit> Increment { get; }
 
-        public SponsorListModel()
+        public SponsorListPageModel()
         {
             Increment = ReactiveCommand.CreateFromTask(async () =>
             {

@@ -4,13 +4,13 @@ using Icon_Cps.Client.Remote;
 
 namespace Icon_Cps.Client.Models
 {
-    public class ProposalListModel : ModelBase
+    public class ProposalListPageModel : PageModelBase
     {
         public List<Proposal> Proposals { get; set; }
 
         public IconServiceClient ServiceClient { get; set; }
 
-        public ProposalListModel()
+        public ProposalListPageModel()
         {
             Proposals = new List<Proposal>
             {

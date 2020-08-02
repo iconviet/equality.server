@@ -5,11 +5,11 @@ using ReactiveUI;
 
 namespace Icon_Cps.Client.Models
 {
-    public class BlockchainModel : ModelBase
+    public class BlockchainViewModel : ViewModelBase
     {
         public long BlockHeight { get; set; }
 
-        public BlockchainModel()
+        public BlockchainViewModel()
         {
             MessageBus.Current
                 .Listen<BlockchainEvent>()

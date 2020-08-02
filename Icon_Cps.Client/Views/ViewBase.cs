@@ -5,7 +5,7 @@ using ReactiveUI.Blazor;
 
 namespace Icon_Cps.Client.Views
 {
-    public abstract class ViewBase<T> : ReactiveComponentBase<T> where T : ModelBase, new()
+    public abstract class ViewBase<T> : ReactiveComponentBase<T> where T : ViewModelBase, new()
     {
         [Inject]
         public new T ViewModel

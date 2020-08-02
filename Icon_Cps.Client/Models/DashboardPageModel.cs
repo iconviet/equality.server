@@ -2,7 +2,7 @@
 
 namespace Icon_Cps.Client.Models
 {
-    public class DashboardModel : ModelBase
+    public class DashboardPageModel : PageModelBase
     {
         public JsonServiceClient ServiceClient { get; set; }
     }
