@@ -1,3 +1,3 @@
 ﻿FROM iconviet/aspnet
 ADD . .
-CMD ["dotnet", "Icon_Cps.Client.dll"]
+CMD ["dotnet", "Icon_Cps.Server.dll"]
