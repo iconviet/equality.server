@@ -1,7 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@page "/"
+@namespace Icon_Cps.Server.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
 <html>
 <head>
-    <base href="/" />
+    <base href="~/" />
     <meta charset="utf-8" />
     <title>ICON Contribution Proposal System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -9,13 +12,18 @@
     <link href="static/app.min.css?v=0.0.0.0" rel="stylesheet" />
 </head>
 <body>
-    <app>Loading...</app>
+    <app>
+        @(await Html.RenderComponentAsync<Client.App>(RenderMode.ServerPrerendered))
+    </app>
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a class="dismiss">🗙</a>
     </div>
     <script src="static/lib/bundle.min.js"></script>
     <script src="static/app.min.js?v=0.0.0.0"></script>
-    <script src="_framework/blazor.webassembly.js"></script>
-</body>
+    <script id="mode"></script>
+    <script>
+        document.getElementById('mode').src = window.location.search.includes('mode=wasm') ? '_framework/blazor.webassembly.js' : '_framework/blazor.server.js';
+    </script>
+    </body>
 </html>

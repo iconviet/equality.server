@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -8,17 +7,11 @@ namespace Icon_Cps.Server
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
-
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
             services.AddControllers();
+            services.AddServerSideBlazor();
         }
 
         public void Configure(IApplicationBuilder application, IWebHostEnvironment environment)
@@ -30,7 +23,6 @@ namespace Icon_Cps.Server
             }
             else
             {
-                application.UseExceptionHandler("/Error");
                 application.UseHsts();
             }
             application.UseHttpsRedirection();
@@ -39,9 +31,9 @@ namespace Icon_Cps.Server
             application.UseRouting();
             application.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
                 endpoints.MapControllers();
-                endpoints.MapFallbackToFile("index.html");
+                endpoints.MapFallbackToPage("/_Host");
             });
         }
     }
