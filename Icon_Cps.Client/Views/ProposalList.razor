@@ -1,54 +1,25 @@
-﻿@page "/proposals"
+﻿@page "/proposals/{state}"
 @inherits ViewBase<ProposalListModel>
 <h1 class="font-weight-bold">
-    <img width="64" src="static/img/gl-icon-report-card-96.png" />
-    Proposals
+    <img width="48" src="static/img/gl-icon-report-card-96.png" />
+    @State.ToTitleCase() Proposals
 </h1>
-<p>This component demonstrates fetching data from the server.</p>
-
-@if (forecasts == null)
-{
-    <p>
-        <em>Loading...</em>
-    </p>
-}
-else
-{
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var forecast in forecasts)
-        {
-            <tr>
-                <td>@forecast.Date.ToShortDateString()</td>
-                <td>@forecast.TemperatureC</td>
-                <td>@forecast.TemperatureF</td>
-                <td>@forecast.Summary</td>
-            </tr>
-        }
-        </tbody>
-    </table>
-}
-
+<SfGrid TValue="Proposal"
+        EnableHover="true"
+        EnableAltRow="true"
+        AllowSelection="false"
+        GridLines="GridLine.Horizontal"
+        DataSource="ViewModel.Proposals">
+    <GridColumns>
+        <GridColumn Field="@nameof(Proposal.Title)" HeaderText="Title"></GridColumn>
+        <GridColumn Field="@nameof(Proposal.IcxRequested)" Format="N4" Width="120" HeaderText="ICX" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
+        <GridColumn Field="@nameof(Proposal.UsdRequested)" Format="C2" Width="120" HeaderText="USD" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
+        <GridColumn Width="78" HeaderText="Since" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
+    </GridColumns>
+</SfGrid>
 @code {
-    private WeatherForecast[] forecasts;
 
-    public class WeatherForecast
-    {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string Summary { get; set; }
-
-        public int TemperatureF => 32 + (int) (TemperatureC / 0.5556);
-    }
+    [Parameter]
+    public string State { get; set; }
 
 }

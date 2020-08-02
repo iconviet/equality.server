@@ -1,21 +1,5 @@
 ﻿@page "/"
 @inherits ViewBase<IndexModel>
 <h1>
-    Block Height : @ViewModel.BlockHeight
+    <img width="64" src="static/img/gl-icon-home-96.png" /> Welcome to ICON CPS.
 </h1>
-
-<img width="64" src="static/img/gl-icon-home-96.png" /> Welcome to ICON CPS.
-
-<SfGrid TValue="Proposal"
-        EnableHover="true"
-        EnableAltRow="true"
-        AllowSelection="false"
-        GridLines="GridLine.Horizontal"
-        DataSource="ViewModel.Proposals">
-    <GridColumns>
-        <GridColumn Field="@nameof(Proposal.Title)" HeaderText="Title"></GridColumn>
-        <GridColumn Field="@nameof(Proposal.IcxRequested)" Format="N4" Width="120" HeaderText="ICX" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
-        <GridColumn Field="@nameof(Proposal.UsdRequested)" Format="C2" Width="120" HeaderText="USD" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
-        <GridColumn Width="78" HeaderText="Since" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
-    </GridColumns>
-</SfGrid>
