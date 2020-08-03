@@ -1,6 +1,7 @@
 ﻿using System.Reactive.Disposables;
 using Icon_Cps.Client.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using ReactiveUI.Blazor;
 
 namespace Icon_Cps.Client.Views
@@ -13,6 +14,9 @@ namespace Icon_Cps.Client.Views
             get => base.ViewModel;
             set => base.ViewModel = value;
         }
+
+        [Inject]
+        public IJSRuntime JsRuntime { get; set; }
 
         protected CompositeDisposable Composite { get; set; }
 

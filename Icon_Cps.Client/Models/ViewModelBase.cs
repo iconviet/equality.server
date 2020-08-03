@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Reactive.Disposables;
+using Microsoft.JSInterop;
 using ReactiveUI;
 
 namespace Icon_Cps.Client.Models
 {
     public abstract class ViewModelBase : ReactiveObject, IDisposable
     {
+        public IJSRuntime JsRuntime { get; set; }
+        
         protected CompositeDisposable Composite { get; set; }
 
         protected ViewModelBase()
