@@ -1,5 +1,6 @@
 ﻿@page "/proposals/{state}"
 @inherits PageBase<ProposalListPageModel>
+
 <h1 class="font-weight-bold">
     <img width="48" src="static/img/gl-icon-report-card-96.png" />
     @State.ToTitleCase() Proposals
@@ -17,6 +18,7 @@
         <GridColumn Width="78" HeaderText="Since" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right"></GridColumn>
     </GridColumns>
 </SfGrid>
+
 @code {
 
     [Parameter]
