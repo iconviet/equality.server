@@ -40,9 +40,9 @@
     }
 
     .sidebar .nav-group {
-        font-weight: 700;
-        font-size: 0.8rem;
-        padding: 1rem 1rem 0.5rem 1rem;
+        font-weight: 900;
+        font-size: 0.7rem;
+        padding: 1rem 1rem 0.5rem 2rem;
     }
 
     .sidebar .nav-item {
@@ -63,13 +63,24 @@
 
             .sidebar .nav-item a:hover {
                 color: #8800cc;
-            }    
+            }
 
             .sidebar .nav-item a.active {
-                color: #8800cc;
-                font-weight: 700;
-                background-color: #f2f2f2;
+                color: white;
+                background: linear-gradient(110deg,#f0f -44%,#1e0a78 157%);
             }
+
+            .sidebar .nav-item a.active i {
+                color: white !important;
+            }
+
+.primary {
+    color: #8800cc;
+}
+
+.secondary {
+    color: #888888;
+}
 
 .button {
     outline: none;
@@ -84,7 +95,7 @@
 }
 
     .button.secondary {
-        color: #80c;
+        color: #8800cc;
         background: transparent;
         padding: .625em 1.125em;
         border: .125em solid #80c;
