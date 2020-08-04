@@ -2,7 +2,8 @@
   {
     "minify": { "enabled": true },
     "inputFiles": [
-      "wwwroot/static/app.js"
+      "wwwroot/static/app.js",
+      "wwwroot/static/iconexwallet.js"
     ],
     "outputFileName": "wwwroot/static/app.min.js"
   },

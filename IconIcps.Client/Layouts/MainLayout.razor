@@ -1,13 +1,26 @@
 ﻿@inherits LayoutComponentBase
-<div class="sidebar">
-    <MainSidebar />
-</div>
+@inject IconexWallet IconexWallet
+
 <div class="main">
     <div class="top-row px-4">
-        <BlockchainView />
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+        <a href="/">
+            <img src="https://www.memsql.com/images/components/navbar/logo_docs.svg">
+        </a>
+        <div class="d-inline-flex align-items-end">
+            <a role="button" class="button primary" @onclick="() => IconexWallet.RequestAddressAsync()">
+                &nbsp;&nbsp;Register&nbsp;&nbsp;
+            </a>
+            <a role="button" class="ml-3 button secondary inverted" @onclick="() => IconexWallet.RequestAddressAsync()">
+                Sign In <i class="fas pl-1 fa-arrow-right"></i>
+            </a>
+        </div>
     </div>
-    <div class="content px-4">
-        @Body
+    <div class="wrapper">
+        <div class="sidebar">
+            <MainSidebar />
+        </div>
+        <div class="content px-4">
+            @Body
+        </div>
     </div>
 </div>

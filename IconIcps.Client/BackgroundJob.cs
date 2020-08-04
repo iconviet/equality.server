@@ -14,7 +14,7 @@ namespace IconIcps.Client
             {
                 var client = new JsonServiceClient();
                 var block = await client.GetLastBlock();
-                MessageBus.Current.SendMessage(new BlockchainEvent { BlockHeight = block.Height });
+                MessageBus.Current.SendMessage(new BlockEvent { Height = block.Height });
             });
         }
     }

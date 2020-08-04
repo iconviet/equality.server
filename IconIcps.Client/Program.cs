@@ -25,6 +25,7 @@ namespace IconIcps.Client
 
         public static Action<ContainerBuilder> ConfigureBuilder = builder =>
         {
+            builder.RegisterType<IconexWallet>().PropertiesAutowired();
             builder.RegisterType<JsonServiceClient>().PropertiesAutowired();
             builder.RegisterType<IconServiceClient>().PropertiesAutowired();
             SyncfusionLicenseProvider.RegisterLicense("MjgwOTEzQDMxMzgyZTMyMmUzMElJVFNKdEpLTk5IV2dGS3VUME9RUXpYVXdOeXJBZHpGc0kxaEU3UE1XczA9");
