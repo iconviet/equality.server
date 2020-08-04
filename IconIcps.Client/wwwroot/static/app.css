@@ -1,73 +1,26 @@
-﻿html, body {
+﻿body {
     color: #4c4a57;
     font-family: 'Lato';
 }
 
-app {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-}
-
-.top-row {
+.main .top-row {
     height: 80px;
     display: flex;
     padding: 0 2rem;
     align-items: center;
+    background-color: #1b1a21;
     justify-content: space-between;
 }
 
-.button {
-    outline: none;
-    line-height: 1;
-    cursor: pointer;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 4px;
-    text-decoration: none;
-    padding: .75em 1.25em;
-    transition: .15s ease-in-out;
-}
-
-    .button.secondary {
-        color: #80c;
-        background: transparent;
-        padding: .625em 1.125em;
-        border: .125em solid #80c;
-    }
-
-    .button.secondary.inverted {
-        color: #fff;
-        border-color: #fff;
-    }
-
-    .button.primary {
-        color: white;
-        border: none;
-        background: linear-gradient(110deg,#f0f -44%,#1e0a78 157%);
-    }
-
-.main {
-    flex: 1;
-}
-
-    .main .wrapper {
-        display: flex;
-        align-items: stretch;
-    }    
-
-    .main .top-row {
-        background-color: #1b1a21;
-    }
-
 .content {
     padding: 1.5rem 2rem;
+    background-color: transparent;
 }
 
 .sidebar {
+    height: 100vh;
     min-width: 220px;
     max-width: 220px;
-    min-height: 100vh;
     padding-top: 1rem;
     background-color: #fafafa;
     border-right: 1px solid #f3f3f5;
@@ -94,7 +47,6 @@ app {
 
     .sidebar .nav-item {
         font-size: 0.9rem;
-        padding-bottom: 0.1rem;
     }
 
         .sidebar .nav-item a {
@@ -105,6 +57,10 @@ app {
             align-items: center;
         }
 
+            .sidebar .nav-item a i {
+                padding-top: 2px;
+            }
+
             .sidebar .nav-item a:hover {
                 color: #8800cc;
             }    
@@ -112,8 +68,38 @@ app {
             .sidebar .nav-item a.active {
                 color: #8800cc;
                 font-weight: 700;
-                background-color: #f3f3f3;
+                background-color: #f2f2f2;
             }
+
+.button {
+    outline: none;
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: .75em 1.25em;
+    transition: .15s ease-in-out;
+}
+
+    .button.secondary {
+        color: #80c;
+        background: transparent;
+        padding: .625em 1.125em;
+        border: .125em solid #80c;
+    }
+
+        .button.secondary.inverted {
+            color: #fff;
+            border-color: #fff;
+        }
+
+    .button.primary {
+        color: white;
+        border: none;
+        background: linear-gradient(110deg,#f0f -44%,#1e0a78 157%);
+    }
 
 .fag {
     background: -webkit-gradient(linear, left top, left bottom, from(#ad1cfe), to(#057dd8));

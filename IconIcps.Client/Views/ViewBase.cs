@@ -14,9 +14,12 @@ namespace IconIcps.Client.Views
             get => base.ViewModel;
             set => base.ViewModel = value;
         }
-
+        
         [Inject]
         public IJSRuntime JsRuntime { get; set; }
+
+        [Inject]
+        public NavigationManager Navigation { get; set; } 
 
         protected CompositeDisposable Composite { get; set; }
 
