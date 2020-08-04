@@ -12,6 +12,7 @@ app {
 .top-row {
     height: 80px;
     display: flex;
+    padding: 0 2rem;
     align-items: center;
     justify-content: space-between;
 }
@@ -59,10 +60,15 @@ app {
         background-color: #1b1a21;
     }
 
+.content {
+    padding: 1.5rem 2rem;
+}
+
 .sidebar {
     min-width: 220px;
     max-width: 220px;
     min-height: 100vh;
+    padding-top: 1rem;
     background-color: #fafafa;
     border-right: 1px solid #f3f3f5;
 }
@@ -76,37 +82,37 @@ app {
         vertical-align: text-top;
     }
 
-    .sidebar .nav-item {
-        font-size: 1rem;
-        padding-bottom: 0.1rem;
+    .sidebar > ul > li {
+        padding-bottom: 1rem;
     }
 
-        .sidebar .nav-item:first-of-type {
-            padding-top: 1rem;
-        }
+    .sidebar .nav-group {
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 1rem 1rem 0.5rem 1rem;
+    }
 
-        .sidebar .nav-item:last-of-type {
-            padding-bottom: 1rem;
-        }
+    .sidebar .nav-item {
+        font-size: 0.9rem;
+        padding-bottom: 0.1rem;
+    }
 
         .sidebar .nav-item a {
             display: flex;
             color: #1b1a21;
             height: 2.5rem;
-            font-weight: 400;
-            line-height: 3rem;
             border-radius: 4px;
             align-items: center;
         }
 
-            .sidebar .nav-item a.active {
-                color: #8800cc;
-                background-color: rgba(255,255,255,0.10);
-            }
-
             .sidebar .nav-item a:hover {
                 color: #8800cc;
-                background-color: rgba(255,255,255,0.05);
+            }    
+
+            .sidebar .nav-item a.active {
+                color: #8800cc;
+                font-weight: 700;
+                background-color: #f3f3f3;
             }
 
 .fag {

@@ -2,16 +2,16 @@
 @inject IconexWallet IconexWallet
 
 <div class="main">
-    <div class="top-row px-4">
+    <div class="top-row">
         <a href="/">
             <img src="https://www.memsql.com/images/components/navbar/logo_docs.svg">
         </a>
         <div class="d-inline-flex align-items-end">
             <a role="button" class="button primary" @onclick="() => IconexWallet.RequestAddressAsync()">
-                &nbsp;&nbsp;Register&nbsp;&nbsp;
+                Register<i class="fas pl-3 fa-arrow-right"></i>
             </a>
             <a role="button" class="ml-3 button secondary inverted" @onclick="() => IconexWallet.RequestAddressAsync()">
-                Sign In <i class="fas pl-1 fa-arrow-right"></i>
+                <i class="fas pr-3 fa-wallet"></i>Sign In
             </a>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="sidebar">
             <MainSidebar />
         </div>
-        <div class="content px-4">
+        <div class="content">
             @Body
         </div>
     </div>
