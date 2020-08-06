@@ -3,19 +3,38 @@
     font-family: 'Lato';
 }
 
-.main .top-row {
-    height: 80px;
+h3 {
+    margin: 0 auto;
+    color: #1b1a21;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    font-family: 'Lato';
+}
+
+h4 {
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 28px;
+    font-family: 'Lato';
+}
+
+.main .menubar {
     display: flex;
+    height: 3.75rem;
     padding: 0 2rem;
     align-items: center;
     background-color: #1b1a21;
     justify-content: space-between;
 }
 
-.content {
-    padding: 1.5rem 2rem;
-    background-color: transparent;
-}
+    .main .menubar .button.primary {
+        padding: 0.650em 1.25em;
+    }
+    
+    .main .menubar .button.secondary {
+        padding: 0.525em 1.125em;
+    }
 
 .sidebar {
     height: 100vh;
@@ -23,7 +42,7 @@
     max-width: 220px;
     padding-top: 1rem;
     background-color: #fafafa;
-    border-right: 1px solid #f3f3f5;
+    border-right: 1px solid #e6e5ea;
 }
 
     .sidebar .fal,
@@ -74,6 +93,20 @@
                 color: white !important;
             }
 
+.content {
+    padding: 2rem;
+    background-color: transparent;
+}
+
+.breadcrumb {
+    display: flex;
+    height: 3.75rem;
+    padding: 0 1rem;
+    align-items: center;
+    background-color: transparent;
+    border-bottom: 1px solid #e6e5ea;
+}
+
 .primary {
     color: #8800cc;
 }
@@ -90,15 +123,14 @@
     text-align: center;
     border-radius: 4px;
     text-decoration: none;
-    padding: .75em 1.25em;
     transition: .15s ease-in-out;
 }
 
     .button.secondary {
         color: #8800cc;
         background: transparent;
-        padding: .625em 1.125em;
-        border: .125em solid #80c;
+        padding: 0.625em 1.125em;
+        border: 0.125em solid #80c;
     }
 
         .button.secondary.inverted {
@@ -109,8 +141,16 @@
     .button.primary {
         color: white;
         border: none;
+        padding: 0.75em 1.25em;
         background: linear-gradient(110deg,#f0f -44%,#1e0a78 157%);
     }
+
+.fao {
+    padding: 1rem;
+    display: inline-flex;
+    background-color: #f9edff;
+    border-radius: 50% !important;
+}
 
 .fag {
     background: -webkit-gradient(linear, left top, left bottom, from(#ad1cfe), to(#057dd8));
