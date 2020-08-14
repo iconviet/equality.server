@@ -20,8 +20,8 @@ h4 {
 }
 
 .main {
+    overflow: hidden;
     flex-flow: column;
-    min-height: 100vh;
 }
 
 .main .menubar {
@@ -48,6 +48,7 @@ h4 {
 .sidebar {
     min-width: 220px;
     max-width: 220px;
+    min-height: 100vh;
     padding-top: 1rem;
     background-color: #fafafa;
     border-right: 1px solid #e6e5ea;
