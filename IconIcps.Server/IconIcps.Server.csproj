@@ -17,7 +17,7 @@
     <ProjectReference Include="..\IconIcps.Client\IconIcps.Client.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LiveSharp" Version="1.6.3" />
+    <PackageReference Include="LiveSharp" Version="1.6.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.0-rc.1.20451.17" />
     <PackageReference Include="Stl.Fusion.Server" Version="0.4.68" />
     <PackageReference Include="WebMarkupMin.AspNetCore3" Version="2.8.9" />

@@ -11,7 +11,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="Humanizer" Version="2.8.26" />
-    <PackageReference Include="LiveSharp" Version="1.6.3" />
+    <PackageReference Include="LiveSharp" Version="1.6.4" />
     <PackageReference Include="Lykke.Icon.Sdk" Version="0.2.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0-rc.1.20451.17" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0-rc.1.20451.17" PrivateAssets="all" />
