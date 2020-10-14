@@ -28,7 +28,7 @@ namespace IconIcps.Client
             builder.RegisterType<IconexWallet>().PropertiesAutowired();
             builder.RegisterType<JsonServiceClient>().PropertiesAutowired();
             builder.RegisterType<IconServiceClient>().PropertiesAutowired();
-            SyncfusionLicenseProvider.RegisterLicense("MjgwOTEzQDMxMzgyZTMyMmUzMElJVFNKdEpLTk5IV2dGS3VUME9RUXpYVXdOeXJBZHpGc0kxaEU3UE1XczA9");
+            SyncfusionLicenseProvider.RegisterLicense("MzM0NzMwQDMxMzgyZTMzMmUzMEI1RHdoYk1rZkNqRnVrTEJHQ0tSdnNKL0tGS0Z5OWlQdG4zS3pDWHVtSVE9");
             builder.RegisterTypes(typeof(Program).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(ViewModelBase))).ToArray()).PropertiesAutowired();
             builder.RegisterTypes(typeof(Program).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(PageModelBase))).ToArray()).PropertiesAutowired();
         };

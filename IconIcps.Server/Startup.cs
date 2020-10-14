@@ -1,12 +1,10 @@
 using System;
-using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Stl.DependencyInjection;
 using Stl.Fusion;
 using Syncfusion.Blazor;
 using WebMarkupMin.AspNetCore3;
@@ -41,16 +39,14 @@ namespace IconIcps.Server
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services
-                .AddFusionCore()
-                .AddControllers();
+            services.AddFusion();
+            services.AddControllers();
             services
                 .AddServerSideBlazor()
                 .AddCircuitOptions(x => x.DetailedErrors = true);
             services
                 .AddSyncfusionBlazor()
                 .AddHttpContextAccessor()
-                .AddDiscoveredServices(Assembly.GetExecutingAssembly())
                 .Configure<HubOptions>(x => x.EnableDetailedErrors = true)
                 .AddSingleton(x => new UpdateDelayer.Options { Delay = TimeSpan.FromSeconds(0.5) })
                 .AddWebMarkupMin(x =>
