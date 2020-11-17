@@ -4,8 +4,7 @@
     <Authors>Tom Nuen</Authors>
     <LangVersion>latest</LangVersion>
     <TargetFramework>net5.0</TargetFramework>
-    <Copyright>Copyright © ICONVIET 2019-2020</Copyright>
-    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <Copyright>Copyright © ICONVIET 2020-2021</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />

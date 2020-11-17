@@ -4,9 +4,8 @@
     <Authors>Tom Nuen</Authors>
     <LangVersion>latest</LangVersion>
     <TargetFramework>net5.0</TargetFramework>
-    <Copyright>Copyright © ICONVIET 2019-2020</Copyright>
+    <Copyright>Copyright © ICONVIET 2020-2021</Copyright>
     <InvariantGlobalization>false</InvariantGlobalization>
-    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Dockerfile">
