@@ -7,6 +7,9 @@
     <Copyright>Copyright © ICONVIET 2021-2022</Copyright>
     <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;LIVESHARP_DISABLE</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Content Include="Dockerfile">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
