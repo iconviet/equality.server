@@ -10,7 +10,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="Humanizer" Version="2.8.26" />
-    <PackageReference Include="LiveSharp" Version="1.6.33" />
+    <PackageReference Include="LiveSharp" Version="1.6.45" />
     <PackageReference Include="Lykke.Icon.Sdk" Version="0.2.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.1" PrivateAssets="all" />
@@ -20,6 +20,6 @@
     <PackageReference Include="ServiceStack.Text" Version="5.10.2" />
     <PackageReference Include="Skclusive.Material.Card" Version="5.2.0" />
     <PackageReference Include="Stl.Fusion.Blazor" Version="0.8.7" />
-    <PackageReference Include="Syncfusion.Blazor" Version="18.4.0.31" />
+    <PackageReference Include="Syncfusion.Blazor" Version="18.4.0.33" />
   </ItemGroup>
 </Project>
