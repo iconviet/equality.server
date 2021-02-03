@@ -22,7 +22,7 @@
     <PackageReference Include="ReactiveUI.Blazor" Version="13.1.1" />
     <PackageReference Include="ServiceStack.Text" Version="5.10.4" />
     <PackageReference Include="Skclusive.Material.Card" Version="5.2.0" />
-    <PackageReference Include="Stl.Fusion.Blazor" Version="0.9.25" />
-    <PackageReference Include="Syncfusion.Blazor" Version="18.4.0.35" />
+    <PackageReference Include="Stl.Fusion.Blazor" Version="0.9.70" />
+    <PackageReference Include="Syncfusion.Blazor" Version="18.4.0.41" />
   </ItemGroup>
 </Project>
