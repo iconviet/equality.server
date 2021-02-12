@@ -15,14 +15,14 @@
     <PackageReference Include="Humanizer" Version="2.8.26" />
     <PackageReference Include="LiveSharp" Version="1.6.52" />
     <PackageReference Include="Lykke.Icon.Sdk" Version="0.2.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.2" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.3" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.1" PrivateAssets="all" />
     <PackageReference Include="ReactiveUI.Blazor" Version="13.1.1" />
     <PackageReference Include="ServiceStack.Text" Version="5.10.4" />
     <PackageReference Include="Skclusive.Material.Card" Version="5.2.0" />
-    <PackageReference Include="Stl.Fusion.Blazor" Version="0.9.70" />
-    <PackageReference Include="Syncfusion.Blazor" Version="18.4.0.41" />
+    <PackageReference Include="Stl.Fusion.Blazor" Version="0.9.95" />
+    <PackageReference Include="Syncfusion.Blazor" Version="18.4.0.42" />
   </ItemGroup>
 </Project>
