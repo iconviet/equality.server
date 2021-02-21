@@ -23,6 +23,7 @@
       "wwwroot/static/lib/jquery-ui.min.js",
       "wwwroot/static/lib/bootstrap.min.js",
       "wwwroot/static/lib/clipboard.min.js",
+      "wwwroot/static/lib/mud-blazor.min.js",
       "wwwroot/static/lib/animate-number.min.js",
       "wwwroot/static/lib/animate-number.extend.min.js"
     ],
@@ -35,6 +36,7 @@
       "wwwroot/static/lib/sf-*.min.css",
       "wwwroot/static/lib/fa-*.min.css",
       "wwwroot/static/lib/bootstrap.min.css",
+      "wwwroot/static/lib/mud-blazor.min.css",
       "wwwroot/static/lib/open-iconic-bootstrap.min.css"
     ],
     "outputFileName": "wwwroot/static/lib/bundle.min.css"
