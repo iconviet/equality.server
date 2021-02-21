@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MudBlazor.Services;
 using Stl.Fusion;
 using Syncfusion.Blazor;
 using WebMarkupMin.AspNetCore3;
@@ -40,6 +41,7 @@ namespace Equality.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddFusion();
+            services.AddMudServices();
             services.AddControllers();
             services
                 .AddServerSideBlazor()

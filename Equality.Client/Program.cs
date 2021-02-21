@@ -6,6 +6,8 @@ using Autofac.Extensions.DependencyInjection;
 using Equality.Client.Models;
 using Equality.Client.Remote;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using MudBlazor.Services;
 using Syncfusion.Blazor;
 using Syncfusion.Licensing;
 
@@ -16,9 +18,11 @@ namespace Equality.Client
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            builder.RootComponents.Add<App>("app");
+            builder.Services.AddMudServices();
             builder.Services.AddSyncfusionBlazor();
+            builder.RootComponents.Add<App>("app");
             builder.ConfigureContainer(new AutofacServiceProviderFactory(), ConfigureBuilder);
+            builder.Services.AddScoped(x => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             BackgroundJob.Start();
             await builder.Build().RunAsync();
         }
