@@ -12,9 +12,16 @@ namespace Equality.Client
         {
             Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(async x =>
             {
-                var client = new JsonServiceClient();
-                var block = await client.GetLastBlock();
-                MessageBus.Current.SendMessage(new BlockEvent { Height = block.Height });
+                try
+                {
+                    var client = new JsonServiceClient();
+                    var block = await client.GetLastBlock();
+                    MessageBus.Current.SendMessage(new BlockEvent { Height = block.Height });
+                }
+                catch
+                {
+                }
+                
             });
         }
     }

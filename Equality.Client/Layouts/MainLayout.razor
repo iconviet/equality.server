@@ -1,19 +1,29 @@
 ﻿@inherits LayoutComponentBase
-<div class="main">
-    <div class="menubar">
-        <MainMenubar />
-    </div>
-    <div class="wrapper">
-        <div class="sidebar">
-            <MainSidebar />
-        </div>
-        <div style="flex: 1;">
-            <div class="breadcrumb">
-                <span class="font-weight-bold">Dashboard</span>
-            </div>
-            <div class="content">
-                @Body
-            </div>
-        </div>
-    </div>
-</div>
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+<MudLayout Class="main">
+    <MudAppBar Class="appbar" Elevation="0">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(_ => Toggle())" />
+        <MudAppBarSpacer />
+        <MudIconButton Icon="@Icons.Filled.Lightbulb" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
+        <MudIconButton Icon="@Icons.Filled.PersonPin" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
+    </MudAppBar>
+    <MudDrawer Class="drawer" @bind-Open="_isOpen" Elevation="2">
+        <MudDrawerHeader Class="header" LinkToIndex="true">
+            <img height="75" src="static/img/header-logo.png" />
+        </MudDrawerHeader>
+        <MainSidebar />
+    </MudDrawer>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>gf5
+@code {
+    bool _isOpen = true;
+
+    void Toggle()
+    {
+        _isOpen = !_isOpen;
+    }
+}

@@ -1,4 +1,6 @@
-﻿body {
+﻿html,
+body {
+    height: 100%;
     color: #4c4a57;
     font-family: 'Lato';
 }
@@ -22,62 +24,62 @@ h4 {
 .main {
     overflow: hidden;
     flex-flow: column;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #7fa8f1, #58b5fb, #00c2ff, #00d5ff, #00e3dd, #00ed9a, #03f037);
 }
 
-.main .menubar {
-    display: flex;
-    height: 3.75rem;
-    padding: 0 2rem;
-    align-items: center;
-    background-color: #1b1a21;
-    justify-content: space-between;
+    .main::before {
+        content: "";
+        background-image: url(img/logo.png);
+        background-size: cover;
+        position: absolute;
+        z-index: -1;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+        left: 240px;
+        opacity: 0.15;
+    }
+
+.main .appbar {
+    background-color: transparent;
 }
 
-    .main .menubar .button.primary {
+    .main .appbar .button.primary {
         padding: 0.650em 1.25em;
     }
     
-    .main .menubar .button.secondary {
+    .main .appbar .button.secondary {
         padding: 0.525em 1.125em;
     }
 
-.wrapper {
-    display: flex;
-}
-
-.sidebar {
-    min-width: 220px;
-    max-width: 220px;
-    min-height: 100vh;
-    padding-top: 1rem;
+.drawer {
+    padding: 0 1rem;
     background-color: #fafafa;
-    border-right: 1px solid #e6e5ea;
 }
+    .drawer .header {
+        margin: 1rem;
+        align-items: center;
+    }
 
-    .sidebar .fal,
-    .sidebar .fas,
-    .sidebar .fad {
-        width: 2rem;
-        font-size: 1rem;
-        color: rgb(197, 80, 255);
+    .drawer .fal,
+    .drawer .fas,
+    .drawer .fad {
+        width: 2.2rem;
+        font-size: 1.5rem;
         vertical-align: text-top;
+        color: var(--mud-palette-primary);
     }
 
-    .sidebar > ul > li {
-        padding-bottom: 1rem;
-    }
-
-    .sidebar .nav-group {
+    .drawer .nav-group {
         font-weight: 900;
         font-size: 0.7rem;
         padding: 1rem 1rem 0.5rem 2rem;
+}
+    .drawer .mud-nav-item {
+        font-size: 1rem;
     }
 
-    .sidebar .nav-item {
-        font-size: 0.9rem;
-    }
-
-        .sidebar .nav-item a {
+        .drawer .mud-nav-item a {
             display: flex;
             color: #1b1a21;
             height: 2.5rem;
@@ -85,22 +87,18 @@ h4 {
             align-items: center;
         }
 
-            .sidebar .nav-item a i {
-                padding-top: 2px;
-            }
-
-            .sidebar .nav-item a:hover {
+            .drawer .mud-nav-item a:hover {
                 color: #8800cc;
             }
 
-            .sidebar .nav-item a.active {
+            .drawer .mud-nav-item a.active {
                 color: white;
-                background: linear-gradient(110deg,#f0f -44%,#1e0a78 157%);
+                background: linear-gradient(110deg,var(--mud-palette-primary) -44%,#1e0a78 157%);
             }
 
-            .sidebar .nav-item a.active i {
-                color: white !important;
-            }
+                .drawer .mud-nav-item a.active i {
+                    color: white !important;
+                }
 
 .content {
     padding: 2rem;

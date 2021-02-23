@@ -1,14 +1,22 @@
 ﻿@page "/"
 @inherits PageBase<DashboardPageModel>
 
-<div class="d-flex justify-content-center">
-    <div class="card" style="width: 640px;">
-        <div class="card-body d-flex flex-column shadow-sm align-items-center justify-content-center" style="padding: 60px 40px;">
+<MudContainer MaxWidth="MaxWidth.Small">
+    <MudCard Elevation="24">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <h3>Swap</h3>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudIconButton Icon="@Icons.Material.Outlined.Settings" Color="Color.Default" />
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent Class="card-body">
             <h3>
                 <span class="fao" style="padding: 2rem;"><img src="/static/img/gl-icon-create-order-96.png" class="fag" /></span>
             </h3>
             <h3 class="mt-5">
-                Want to provide liquidity and earn ???
+                Want to provide liquidity and earn huh ???
             </h3>
             <h4 class="mt-3" align="center">
                 Experience the best-in-class speed, capability, and reliability, available instantly and on-demand in the cloud.
@@ -16,6 +24,9 @@
             <div class="d-flex mt-5">
                 <CreateProposalButton />
             </div>
-        </div>
-    </div>
-</div>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+        </MudCardActions>
+    </MudCard>    
+</MudContainer>
