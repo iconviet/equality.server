@@ -1,4 +1,5 @@
 ﻿@page "/"
+@page "/swap"
 @inherits PageBase<DashboardPageModel>
 
 <MudContainer MaxWidth="MaxWidth.Small">
@@ -8,25 +9,59 @@
                 <h3>Swap</h3>
             </CardHeaderContent>
             <CardHeaderActions>
-                <MudIconButton Icon="@Icons.Material.Outlined.Settings" Color="Color.Default" />
+                <MudIconButton Icon="fad fa-cog" />
             </CardHeaderActions>
         </MudCardHeader>
-        <MudCardContent Class="card-body">
-            <h3>
-                <span class="fao" style="padding: 2rem;"><img src="/static/img/gl-icon-create-order-96.png" class="fag" /></span>
-            </h3>
-            <h3 class="mt-5">
-                Want to provide liquidity and earn huh ???
-            </h3>
-            <h4 class="mt-3" align="center">
-                Experience the best-in-class speed, capability, and reliability, available instantly and on-demand in the cloud.
-            </h4>
-            <div class="d-flex mt-5">
-                <CreateProposalButton />
-            </div>
+        <MudCardContent>
+            <MudGrid>
+                <MudItem xs="12" sm="6" md="5">
+                    <MudTextField @bind-Value="@_from" Label="FROM" Placeholder="0.00" Variant="Variant.Outlined"></MudTextField>
+                </MudItem>
+                <MudItem xs="12" sm="6" md="7">
+                    <MudSelect @bind-Value="@_fromList" Variant="Variant.Outlined" OffsetY="true">
+                        <MudSelectItem Value="@("ICX")">
+                            <img src="static/img/icx.png" height="22" class="mr-1 mb-1"/> ICX
+                        </MudSelectItem>
+                        <MudSelectItem Value="@("ICON Dollar")">
+                            <img src="static/img/icx.png" height="22" class="mr-1 mb-1"/> ICON Dollar
+                        </MudSelectItem>
+                        <MudSelectItem Value="@("Bridge Dollar")">
+                            <img src="static/img/icx.png" height="22" class="mr-1 mb-1"/> Bridge Dollar
+                        </MudSelectItem>
+                    </MudSelect>
+                </MudItem>
+            </MudGrid>
+            <MudGrid>
+                <MudItem xs="12" sm="6" md="5">
+                    <MudTextField @bind-Value="@_to" Label="TO" Placeholder="0.00" Variant="Variant.Outlined"></MudTextField>
+                </MudItem>
+                <MudItem xs="12" sm="6" md="7">
+                    <MudSelect @bind-Value="@_toList" Variant="Variant.Outlined" OffsetY="true">
+                        <MudSelectItem Value="@("ICX")">
+                            <img src="static/img/icx.png" height="22" class="mr-1 mb-1"/> ICX
+                        </MudSelectItem>
+                        <MudSelectItem Value="@("ICON Dollar")">
+                            <img src="static/img/icx.png" height="22" class="mr-1 mb-1"/> ICON Dollar
+                        </MudSelectItem>
+                        <MudSelectItem Value="@("Bridge Dollar")">
+                            <img src="static/img/icx.png" height="22" class="mr-1 mb-1"/> Bridge Dollar
+                        </MudSelectItem>
+                    </MudSelect>
+                </MudItem>
+            </MudGrid>
         </MudCardContent>
         <MudCardActions>
-            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+            <CreateProposalButton />
         </MudCardActions>
     </MudCard>    
 </MudContainer>
+@code{
+
+    string _from = "";
+    string _fromList = "ICX";
+
+    string _to = "";
+    string _toList = "ICON Dollar";
+
+}
+<!-- <span class="fao" style="padding: 2rem;"><img src="/static/img/gl-icon-create-order-96.png" class="fag" /></span> -->

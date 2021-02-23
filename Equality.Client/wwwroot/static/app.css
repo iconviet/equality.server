@@ -5,52 +5,26 @@ body {
     font-family: 'Lato';
 }
 
-h3 {
-    margin: 0 auto;
-    color: #1b1a21;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 28px;
-    font-family: 'Lato';
-}
-
-h4 {
-    margin: 0 auto;
-    font-size: 20px;
-    line-height: 28px;
-    font-family: 'Lato';
-}
-
 .main {
     overflow: hidden;
-    flex-flow: column;
     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #7fa8f1, #58b5fb, #00c2ff, #00d5ff, #00e3dd, #00ed9a, #03f037);
 }
 
     .main::before {
-        content: "";
-        background-image: url(img/logo.png);
-        background-size: cover;
-        position: absolute;
-        z-index: -1;
-        top: 60px;
+        left: 0;
         right: 0;
+        top: 60px;
         bottom: 0;
-        left: 240px;
+        content: ' ';
         opacity: 0.15;
+        position: absolute;
+        background-size: cover;
+        background-image: url(img/logo.png);
     }
 
 .main .appbar {
     background-color: transparent;
 }
-
-    .main .appbar .button.primary {
-        padding: 0.650em 1.25em;
-    }
-    
-    .main .appbar .button.secondary {
-        padding: 0.525em 1.125em;
-    }
 
 .drawer {
     padding: 0 1rem;
@@ -70,97 +44,26 @@ h4 {
         color: var(--mud-palette-primary);
     }
 
-    .drawer .nav-group {
-        font-weight: 900;
-        font-size: 0.7rem;
-        padding: 1rem 1rem 0.5rem 2rem;
-}
     .drawer .mud-nav-item {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
         .drawer .mud-nav-item a {
-            display: flex;
-            color: #1b1a21;
-            height: 2.5rem;
             border-radius: 4px;
-            align-items: center;
         }
 
-            .drawer .mud-nav-item a:hover {
-                color: #8800cc;
-            }
 
-            .drawer .mud-nav-item a.active {
-                color: white;
-                background: linear-gradient(110deg,var(--mud-palette-primary) -44%,#1e0a78 157%);
-            }
-
-                .drawer .mud-nav-item a.active i {
-                    color: white !important;
-                }
-
-.content {
-    padding: 2rem;
-    background-color: transparent;
+.mud-card-header {
+    padding: 24px 24px;
 }
 
-.breadcrumb {
-    height: 3.75rem;
-    padding: 0 1rem;
-    margin-bottom: 0;
-    border-radius: 0;
-    align-items: center;
-    background-color: transparent;
-    border-bottom: 1px solid #e6e5ea;
+.mud-card-content {
+    padding: 24px 24px;
 }
 
-.primary {
-    color: #8800cc;
+.mud-card-actions {
+    padding: 24px 24px;
 }
-
-.secondary {
-    color: #888888;
-}
-
-.button {
-    outline: none;
-    line-height: 1;
-    cursor: pointer;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: .15s ease-in-out;
-}
-
-    .button.secondary {
-        color: #8800cc;
-        background: transparent;
-        padding: 0.625em 1.125em;
-        border: 0.125em solid #80c;
-    }
-
-        .button.secondary.inverted {
-            color: #fff;
-            border-color: #fff;
-        }
-
-        a.button.primary:hover {
-            color: white !important;
-            background: linear-gradient(60deg,#f0f -44%,#1e0a78 157%);
-        }
-
-        a.button.secondary:hover {
-            background-color: #ffffff26;
-        }
-
-        .button.primary {
-            color: white;
-            border: none;
-            padding: 0.75em 1.25em;
-            background: linear-gradient(120deg,#f0f -44%,#1e0a78 157%);
-        }
 
 .fao {
     padding: 1rem;
@@ -173,23 +76,4 @@ h4 {
     background: -webkit-gradient(linear, left top, left bottom, from(#ad1cfe), to(#057dd8));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
-}
-
-#blazor-error-ui {
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
 }

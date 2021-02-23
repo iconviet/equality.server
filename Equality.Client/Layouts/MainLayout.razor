@@ -1,24 +1,26 @@
 ﻿@inherits LayoutComponentBase
-<MudThemeProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
+<MudThemeProvider Theme="_light" />
 <MudLayout Class="main">
-    <MudAppBar Class="appbar" Elevation="0">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(_ => Toggle())" />
-        <MudAppBarSpacer />
-        <MudIconButton Icon="@Icons.Filled.Lightbulb" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
-        <MudIconButton Icon="@Icons.Filled.PersonPin" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
-    </MudAppBar>
-    <MudDrawer Class="drawer" @bind-Open="_isOpen" Elevation="2">
-        <MudDrawerHeader Class="header" LinkToIndex="true">
-            <img height="75" src="static/img/header-logo.png" />
-        </MudDrawerHeader>
-        <MainSidebar />
-    </MudDrawer>
-    <MudMainContent>
-        @Body
-    </MudMainContent>
-</MudLayout>gf5
+    <MudLayout>
+        <MudAppBar Class="appbar" Elevation="0">
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(_ => Toggle())" />
+            <MudAppBarSpacer />
+            <MudIconButton Icon="@Icons.Filled.Lightbulb" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
+            <MudIconButton Icon="@Icons.Filled.PersonPin" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
+        </MudAppBar>
+        <MudDrawer Class="drawer" @bind-Open="_isOpen" Elevation="2">
+            <MudDrawerHeader Class="header" LinkToIndex="true">
+                <img height="75" src="static/img/header-logo.png" />
+            </MudDrawerHeader>
+            <MainSidebar />
+        </MudDrawer>
+        <MudMainContent>
+            @Body
+        </MudMainContent>
+    </MudLayout>
+</MudLayout>
 @code {
     bool _isOpen = true;
 
@@ -26,4 +28,32 @@
     {
         _isOpen = !_isOpen;
     }
+
+    readonly MudTheme _dark = new MudTheme
+    {
+        Palette = new Palette
+        {
+            Primary = Colors.Green.Default,
+            Secondary = Colors.Blue.Default
+        },
+        LayoutProperties = new LayoutProperties
+        {
+            DrawerWidth = "240px",
+            DefaultBorderRadius = "4px"
+        }
+    };
+
+    readonly MudTheme _light = new MudTheme
+    {
+        Palette = new Palette
+        {
+            Primary = Colors.Green.Default,
+            Secondary = Colors.Blue.Default
+        },
+        LayoutProperties = new LayoutProperties
+        {
+            DrawerWidth = "240px",
+            DefaultBorderRadius = "4px"
+        }
+    };
 }
