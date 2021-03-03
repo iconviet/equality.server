@@ -1,0 +1,25 @@
+﻿@inject IconexWallet IconexWallet
+
+<MudButton Color="@Color"
+           EndIcon="@Icon"
+           Variant="@Variant"
+           DisableElevation="true"
+           OnClick="@(_ => IconexWallet.RequestAddressAsync())">
+    @Text
+</MudButton>
+
+@code {
+
+    [Parameter]
+    public string Icon { get; set; }
+
+    [Parameter]
+    public string Text { get; set; } = "ICONex";
+
+    [Parameter]
+    public Color Color { get; set; } = Color.Inherit;
+
+    [Parameter]
+    public Variant Variant { get; set; } = Variant.Text;
+
+}

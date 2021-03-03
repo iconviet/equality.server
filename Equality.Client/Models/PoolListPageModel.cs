@@ -5,7 +5,7 @@ using ReactiveUI;
 
 namespace Equality.Client.Models
 {
-    public class SponsorListPageModel : PageModelBase
+    public class PoolListPageModel : PageModelBase
     {
         public long Count { get; set; }
 
@@ -15,7 +15,7 @@ namespace Equality.Client.Models
 
         public ReactiveCommand<Unit, Unit> Increment { get; }
 
-        public SponsorListPageModel()
+        public PoolListPageModel()
         {
             Increment = ReactiveCommand.CreateFromTask(async () =>
             {

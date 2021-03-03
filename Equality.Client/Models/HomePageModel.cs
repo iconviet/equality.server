@@ -2,7 +2,7 @@
 
 namespace Equality.Client.Models
 {
-    public class DashboardPageModel : PageModelBase
+    public class HomePageModel : PageModelBase
     {
         public JsonServiceClient ServiceClient { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿@page "/"
 @page "/swap"
-@inherits PageBase<DashboardPageModel>
+@inherits PageBase<HomePageModel>
 
 <MudContainer MaxWidth="MaxWidth.Small">
     <MudCard Elevation="24">
@@ -51,7 +51,7 @@
             </MudGrid>
         </MudCardContent>
         <MudCardActions>
-            <CreateProposalButton />
+            <IconexWalletButton Text="Connect Wallet" Icon="fad fa-arrow-right" Variant="@Variant.Filled" Color="@Color.Primary" />
         </MudCardActions>
     </MudCard>    
 </MudContainer>
