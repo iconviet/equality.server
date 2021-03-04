@@ -1,6 +1,7 @@
 ﻿@inject IconexWallet IconexWallet
 
-<MudButton Color="@Color"
+<MudButton Size="@Size"
+           Color="@Color"
            Class="@Class"
            EndIcon="@Icon"
            Variant="@Variant"
@@ -19,6 +20,9 @@
 
     [Parameter]
     public string Text { get; set; } = "ICONex";
+
+    [Parameter]
+    public Size Size { get; set; } = Size.Medium;
 
     [Parameter]
     public Color Color { get; set; } = Color.Inherit;

@@ -5,6 +5,16 @@ body {
     font-family: 'Inter';
 }
 
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .main {
     overflow: hidden;
     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #7fa8f1, #58b5fb, #00c2ff, #00d5ff, #00e3dd, #00ed9a, #03f037);
@@ -44,12 +54,13 @@ body {
         color: var(--mud-palette-primary);
     }
 
-    .drawer .mud-nav-item {
-        font-size:0.9rem;
+    .drawer .mud-nav-link-text {
+        font-weight: 500;
+        font-size: 0.9rem;
     }
 
         .drawer .mud-nav-item a {
-            border-radius: 4px;
+            border-radius: 5px;
         }
 
 
@@ -71,6 +82,20 @@ body {
 
 .mud-card-actions {
     padding: 24px 24px;
+}
+
+.mud-input-control.large .mud-input-slot {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.mud-input-control > div.mud-input.mud-input-text {
+    margin-top: 0;
+}
+
+.mud-input-control.mud-select.large .mud-input-slot {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .fao {
