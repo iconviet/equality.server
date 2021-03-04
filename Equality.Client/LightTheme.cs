@@ -7,6 +7,7 @@ namespace Equality.Client
         public LightTheme()
         {
             Palette.Primary = Colors.Green.Default;
+            Palette.Tertiary = Colors.Grey.Default;
             Palette.Secondary = Colors.Blue.Default;
         }
     }
