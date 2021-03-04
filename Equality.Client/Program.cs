@@ -8,8 +8,6 @@ using Equality.Client.Remote;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
-using Syncfusion.Blazor;
-using Syncfusion.Licensing;
 
 namespace Equality.Client
 {
@@ -19,7 +17,6 @@ namespace Equality.Client
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.Services.AddMudServices();
-            builder.Services.AddSyncfusionBlazor();
             builder.RootComponents.Add<App>("app");
             builder.ConfigureContainer(new AutofacServiceProviderFactory(), ConfigureBuilder);
             builder.Services.AddScoped(x => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
@@ -32,7 +29,6 @@ namespace Equality.Client
             builder.RegisterType<IconexWallet>().PropertiesAutowired();
             builder.RegisterType<JsonServiceClient>().PropertiesAutowired();
             builder.RegisterType<IconServiceClient>().PropertiesAutowired();
-            SyncfusionLicenseProvider.RegisterLicense("MzcyNTI2QDMxMzgyZTM0MmUzMFd3RUhHdzZXS1pYZjhmS2ZVTzkyMEVzbHNnU0hnMURWNEI3cm1EdkhFekE9");
             builder.RegisterTypes(typeof(Program).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(ViewModelBase))).ToArray()).PropertiesAutowired();
             builder.RegisterTypes(typeof(Program).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(PageModelBase))).ToArray()).PropertiesAutowired();
         };

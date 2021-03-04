@@ -1,0 +1,15 @@
+﻿/*!
+ * https://google-webfonts-helper.herokuapp.com
+ */
+/* inter-regular - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('inter-v3-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''), url('inter-v3-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('inter-v3-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('inter-v3-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('inter-v3-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('inter-v3-latin-regular.svg#Inter') format('svg'); /* Legacy iOS */
+}

@@ -1,7 +1,8 @@
 ﻿@inherits LayoutComponentBase
+
 <MudDialogProvider />
 <MudSnackbarProvider />
-<MudThemeProvider Theme="_light" />
+<MudThemeProvider Theme="_theme" />
 <MudLayout Class="main">
     <MudLayout>
         <MudAppBar Class="appbar" Elevation="0">
@@ -28,39 +29,15 @@
         </MudMainContent>
     </MudLayout>
 </MudLayout>
+
 @code {
+    
     bool _isOpen = true;
+
+    readonly MudTheme _theme = new LightTheme();
 
     void Toggle()
     {
         _isOpen = !_isOpen;
     }
-
-    readonly MudTheme _dark = new MudTheme
-    {
-        Palette = new Palette
-        {
-            Primary = Colors.Green.Default,
-            Secondary = Colors.Blue.Default
-        },
-        LayoutProperties = new LayoutProperties
-        {
-            DrawerWidth = "240px",
-            DefaultBorderRadius = "4px"
-        }
-    };
-
-    readonly MudTheme _light = new MudTheme
-    {
-        Palette = new Palette
-        {
-            Primary = Colors.Green.Default,
-            Secondary = Colors.Blue.Default
-        },
-        LayoutProperties = new LayoutProperties
-        {
-            DrawerWidth = "240px",
-            DefaultBorderRadius = "4px"
-        }
-    };
 }

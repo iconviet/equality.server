@@ -7,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MudBlazor.Services;
 using Stl.Fusion;
-using Syncfusion.Blazor;
 using WebMarkupMin.AspNetCore3;
 
 namespace Equality.Server
@@ -47,7 +46,6 @@ namespace Equality.Server
                 .AddServerSideBlazor()
                 .AddCircuitOptions(x => x.DetailedErrors = true);
             services
-                .AddSyncfusionBlazor()
                 .AddHttpContextAccessor()
                 .Configure<HubOptions>(x => x.EnableDetailedErrors = true)
                 .AddSingleton(x => new UpdateDelayer.Options { Delay = TimeSpan.FromSeconds(0.5) })

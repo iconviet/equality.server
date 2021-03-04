@@ -2,7 +2,7 @@
 body {
     height: 100%;
     color: #4c4a57;
-    font-family: 'Lato';
+    font-family: 'Inter';
 }
 
 .main {
@@ -52,6 +52,14 @@ body {
             border-radius: 4px;
         }
 
+
+.mud-card {
+    background-color: rgb(250, 252, 255);
+}
+
+.mud-paper {
+    border-radius: 5px;
+}
 
 .mud-card-header {
     padding: 24px 24px;
