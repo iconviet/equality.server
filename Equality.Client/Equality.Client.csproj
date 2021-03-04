@@ -5,7 +5,6 @@
     <LangVersion>latest</LangVersion>
     <TargetFramework>net6.0</TargetFramework>
     <Copyright>Copyright © TNTXT 2021-2022</Copyright>
-	<BlazorCacheBootResources>false</BlazorCacheBootResources>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;LIVESHARP_DISABLE</DefineConstants>
