@@ -6,14 +6,18 @@
     <MudCard Elevation="24">
         <MudCardHeader>
             <CardHeaderContent>
-                <MudText Typo="Typo.h5"><b>Swap</b></MudText>
+                <MudText Typo="Typo.h5">
+                    <b>Swap</b>
+                </MudText>
             </CardHeaderContent>
             <CardHeaderActions>
                 <MudIconButton Icon="fad fa-cog" />
             </CardHeaderActions>
         </MudCardHeader>
         <MudCardContent>
-            <MudText Typo="Typo.subtitle2"><b>Send</b></MudText>
+            <MudText Typo="Typo.subtitle2">
+                <b>Send</b>
+            </MudText>
             <MudPaper Class="mb-6 shadow-light">
                 <MudGrid Spacing="0">
                     <MudItem xs="6" sm="8" md="8">
@@ -37,7 +41,9 @@
             <div class="d-flex justify-content-center">
                 <MudFab Size="Size.Small" IconColor="Color.Secondary" Icon="@Icons.Filled.SwapVert" />
             </div>
-            <MudText Typo="Typo.subtitle2"><b>Receive</b></MudText>
+            <MudText Typo="Typo.subtitle2">
+                <b>Receive</b>
+            </MudText>
             <MudPaper Class="shadow-light">
                 <MudGrid Spacing="0">
                     <MudItem xs="6" sm="8" md="8">
@@ -59,8 +65,8 @@
                 </MudGrid>
             </MudPaper>
             <div class="my-6 d-flex">
-                <IconexWalletButton Text="Connect Wallet" Variant="@Variant.Filled" Color="@Color.Primary" Class="d-flex flex-grow-1"/>
-             </div>
+                <IconexWalletButton Text="Connect Wallet" Variant="@Variant.Filled" Color="@Color.Primary" Class="d-flex flex-grow-1" />
+            </div>
             <MudPaper Class="p-3 shadow-light">
                 <MudGrid Spacing="1">
                     <MudItem xs="6" sm="6" md="9">
@@ -84,8 +90,9 @@
                 </MudGrid>
             </MudPaper>
         </MudCardContent>
-    </MudCard>    
+    </MudCard>
 </MudContainer>
+
 @code{
 
     string _from = "";
@@ -95,4 +102,5 @@
     string _toList = "ICD";
 
 }
+
 <!-- <span class="fao" style="padding: 2rem;"><img src="/static/img/gl-icon-create-order-96.png" class="fag" /></span> -->
