@@ -45,13 +45,9 @@ input::-webkit-inner-spin-button {
         align-items: center;
     }
 
-    .drawer .fal,
-    .drawer .fas,
-    .drawer .fad {
-        width: 2.2rem;
-        font-size: 1.5rem;
-        vertical-align: text-top;
-        color: var(--mud-palette-primary);
+    .drawer .mud-nav-item {
+        margin: 5px 0;
+        border-radius: 5px;
     }
 
     .drawer .mud-nav-link-text {
@@ -59,9 +55,14 @@ input::-webkit-inner-spin-button {
         font-size: 0.9rem;
     }
 
-        .drawer .mud-nav-item a {
-            border-radius: 5px;
-        }
+    .drawer .fal,
+    .drawer .fas,
+    .drawer .fad {
+        width: 1.6rem;
+        font-size: 1.25rem;
+        vertical-align: text-top;
+        color: var(--mud-palette-primary);
+    }
 
 
 .mud-card {
