@@ -11,8 +11,10 @@
     <DefineConstants>TRACE;LIVESHARP_DISABLE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-	  <Content Include="Dockerfile" />
 	  <Content Include="LiveSharp.Support.BlazorWASM.dll" />
+	  <None Update="Dockerfile">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Equality.Client\Equality.Client.csproj" />
