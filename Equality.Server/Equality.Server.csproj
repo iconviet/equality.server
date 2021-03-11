@@ -11,9 +11,8 @@
     <DefineConstants>TRACE;LIVESHARP_DISABLE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Dockerfile">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+	  <Content Include="Dockerfile" />
+	  <Content Include="LiveSharp.Support.BlazorWASM.dll" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Equality.Client\Equality.Client.csproj" />
@@ -23,10 +22,5 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.0-preview.1.21103.6" />
     <PackageReference Include="Stl.Fusion.Server" Version="0.10.48" />
     <PackageReference Include="WebMarkupMin.AspNetCore3" Version="2.9.2" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="LiveSharp.Support.BlazorWASM.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 </Project>

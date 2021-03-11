@@ -6,7 +6,6 @@ namespace Equality.Client
     {
         protected BaseTheme()
         {
-            LayoutProperties.DrawerWidth = "240px";
             LayoutProperties.DefaultBorderRadius = "5px";
             Typography.Body1.FontFamily =
                 Typography.Body2.FontFamily =
