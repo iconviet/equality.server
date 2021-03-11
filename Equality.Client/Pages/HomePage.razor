@@ -80,7 +80,7 @@
                     </MudPaper>
                     <div class="my-6 d-flex justify-content-center">
                         <MudText Typo="Typo.caption" Color="Color.Tertiary">
-                            Exchange Rate: <b>1 ICD = 0.9970 USDT</b>
+                            Exchange Rate: 1 ICD = <b>0.9970</b> USDT
                         </MudText>
                     </div>
                     <div class="my-6 d-flex">
@@ -131,26 +131,101 @@
                 <MudCardContent>
                     <MudTable T="Pool" Items="_pools" Class="p-4" Elevation="0" Breakpoint="Breakpoint.Sm">
                         <ColGroup>
-                            <col style="width: 50%;" />
-                            <col style="width: 100px;" />
-                            <col style="width: 100px;" />
+                            <col style="width: 200px;" />
                             <col style="width: 80px;" />
+                            <col style="width: 25%;" />
+                            <col style="width: 100px;" />
+                            <col style="width: 100px;" />
+                            <col style="width: 100px;" />
                             <col />
                         </ColGroup>
                         <HeaderContent>
                             <MudTh>NAME</MudTh>
-                            <MudTh Style="text-align:right">LIQUIDITY</MudTh>
+                            <MudTh Style="text-align: center">
+                                BASE APY
+                                <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                    <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                                </MudTooltip>
+                            </MudTh>
+                            <MudTh Style="text-align: center">
+                                REWARD APY
+                                <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                    <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                                </MudTooltip>
+                            </MudTh>
+                            <MudTh Style="text-align: right">
+                                LIQUIDITY
+                                <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                    <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                                </MudTooltip>
+                            </MudTh>
                             <MudTh Style="text-align:right">VOLUME (24H)</MudTh>
                             <MudTh Style="text-align:right">CHANGE (24H)</MudTh>
                         </HeaderContent>
                         <RowTemplate>
                             <MudTd DataLabel="Name" Style="font-weight: 800;">
-                                <img height="24" src="static/img/usdc.png" style="padding-right: 10px;" />
-                                @context.Name
+                                @if (_isLoaded)
+                                {
+                                    <img height="24" src="static/img/usdc.png" style="padding-right: 10px;" />@context.Name
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
                             </MudTd>
-                            <MudTd DataLabel="Liquidity" Style="text-align:right; font-weight: 500;">@context.Liquidity.ToString("C0")</MudTd>
-                            <MudTd DataLabel="Volume (24h)" Style="text-align:right; font-weight: 500; color: rgb(124, 132, 151);">$@context.Volume24H.ToString("C0")</MudTd>
-                            <MudTd DataLabel="Change (24h)" Style="text-align:right; font-weight: 600; color: rgb(69, 197, 129);">@context.Change24H.ToString("P2")</MudTd>
+                            <MudTd DataLabel="Base APY" Style="text-align: center; font-weight: 500;">
+                                @if (_isLoaded)
+                                {
+                                    @(0.0072.ToString("P"))
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Reward APY" Style="text-align: center; font-weight: 500;">
+                                @if (_isLoaded)
+                                {
+                                    @(0.014.ToString("P"))
+                                    <i class="fal px-2 fa-arrow-right"></i>
+                                    @(0.36.ToString("P"))
+                                    <span class="pl-3">EQU</span>
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Liquidity" Style="text-align: right; font-weight: 500;">
+                                @if (_isLoaded)
+                                {
+                                    @context.Liquidity.ToString("C0")
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Volume (24h)" Style="text-align: right; font-weight: 500; color: rgb(124, 132, 151);">
+                                @if (_isLoaded)
+                                {
+                                    @context.Volume24H.ToString("C0")
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Change (24h)" Style="text-align: right; font-weight: 600; color: rgb(69, 197, 129);">
+                                @if (_isLoaded)
+                                {
+                                    @context.Change24H.ToString("P")
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
+                            </MudTd>
                         </RowTemplate>
                     </MudTable>
                 </MudCardContent>
@@ -166,6 +241,8 @@
 
     private string _to = "997";
     private string _toList = "USDT";
+
+    private bool _isLoaded;
 
     IEnumerable<Pool> _pools = new List<Pool>();
 
@@ -209,8 +286,9 @@
                 Change24H = 0.12
             }
         };
-        return Task.CompletedTask;
-    } 
+        return Task.Delay(2000).ContinueWith(_ => _isLoaded = true);
+
+} 
 
 }
 

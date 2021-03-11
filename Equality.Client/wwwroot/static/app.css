@@ -85,6 +85,10 @@ input::-webkit-inner-spin-button {
     padding: 24px 24px;
 }
 
+.mud-skeleton {
+    background-color: rgba(0, 0, 0, .05);
+}
+
 .mud-input-control.large .mud-input-slot {
     font-size: 20px;
     font-weight: 700;
@@ -100,17 +104,27 @@ input::-webkit-inner-spin-button {
 }
 
 .mud-table-root .mud-table-head .mud-table-cell {
-    padding: 16px 0;
     font-size: 12px;
     font-weight: 500;
+    padding: 12px 12px;
     color: rgb(124, 132, 151);
     border-bottom: 1px solid #f1f2f3;
 }
 
 .mud-table-root .mud-table-body .mud-table-cell {
-    padding: 24px 0;
+    line-height: 28px;
     border-bottom: 1px solid #f1f2f3;
 }
+
+.mud-table-root .mud-table-head .mud-table-cell:first-child,
+.mud-table-root .mud-table-body .mud-table-cell:first-child {
+        padding-left: 0;
+    }
+
+.mud-table-root .mud-table-head .mud-table-cell:last-child,
+.mud-table-root .mud-table-body .mud-table-cell:last-child {
+        padding-right: 0;
+    }
 
     .fao {
         padding: 1rem;
