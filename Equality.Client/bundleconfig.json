@@ -18,7 +18,6 @@
     "minify": { "enabled": false },
     "inputFiles": [
       "wwwroot/static/lib/jquery.min.js",
-      "wwwroot/static/lib/bootstrap.min.js",
       "wwwroot/static/lib/mudblazor.min.js",
       "wwwroot/static/lib/clipboard.min.js"
     ],
@@ -29,7 +28,6 @@
     "inputFiles": [
       "wwwroot/static/lib/gf-*.min.css",
       "wwwroot/static/lib/fa-*.min.css",
-      "wwwroot/static/lib/bootstrap.min.css",
       "wwwroot/static/lib/mudblazor.min.css"
     ],
     "outputFileName": "wwwroot/static/lib/bundle.min.css"

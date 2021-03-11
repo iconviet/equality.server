@@ -22,31 +22,41 @@
                     </MudText>
                     <MudPaper Class="mt-1 px-4 py-2 shadow-light">
                         <MudGrid Spacing="0">
-                            <MudItem xs="6" sm="7" md="7">
+                            <MudItem xs="6" sm="8" md="8">
                                 <MudTextField Class="large" @bind-Value="@_from" Placeholder="0.00" Variant="Variant.Text" InputType="InputType.Number" DisableUnderLine="true" />
                             </MudItem>
-                            <MudItem xs="6" sm="5" md="5">
+                            <MudItem xs="6" sm="4" md="4">
                                 <MudSelect Class="large" OffsetY="true" @bind-Value="@_fromList" Variant="Variant.Text" FullWidth="true" DisableUnderLine="true">
                                     <MudSelectItem Value="@("ICX")">
-                                        <img src="static/img/icx-64.png" height="20" class="mr-1 mb-1" /> ICX
+                                        <div class="d-flex">
+                                            <img src="static/img/icx-64.png" height="20" class="mr-2" />ICX
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("ICD")">
-                                        <img src="static/img/usd.svg" height="20" class="mr-1 mb-1" /> ICD
+                                        <div class="d-flex">
+                                            <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDT")">
-                                        <img src="static/img/usdt-64.png" height="20" class="mr-1 mb-1" /> USDT
+                                        <div class="d-flex">
+                                            <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDC")">
-                                        <img src="static/img/usdc.png" height="20" class="mr-1 mb-1" /> USDC
+                                        <div class="d-flex">
+                                            <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("bnUSD")">
-                                        <img src="static/img/bnusd-64.png" height="20" class="mr-1 mb-1" /> bnUSD
+                                        <div class="d-flex">
+                                            <img src="static/img/bnusd-64.png" height="20" class="mr-2" />bnUSD
+                                        </div>
                                     </MudSelectItem>
                                 </MudSelect>
                             </MudItem>
                         </MudGrid>
                     </MudPaper>
-                    <div class="mt-7 mb-1 d-flex justify-content-center">
+                    <div class="mt-7 mb-1 d-flex justify-center">
                         <MudFab Size="Size.Small" IconColor="Color.Secondary" Icon="@Icons.Filled.SwapVert" Style="background-color: white;" />
                     </div>
                     <MudText Typo="Typo.overline">
@@ -54,39 +64,49 @@
                     </MudText>
                     <MudPaper Class="mt-1 px-4 py-2 shadow-light">
                         <MudGrid Spacing="0">
-                            <MudItem xs="6" sm="7" md="7">
+                            <MudItem xs="6" sm="8" md="8">
                                 <MudTextField Class="large" @bind-Value="@_to" Placeholder="0.00" Variant="Variant.Text" InputType="InputType.Number" DisableUnderLine="true" />
                             </MudItem>
-                            <MudItem xs="6" sm="5" md="5">
+                            <MudItem xs="6" sm="4" md="4">
                                 <MudSelect Class="large" OffsetY="true" @bind-Value="@_toList" Variant="Variant.Text" FullWidth="true" DisableUnderLine="true">
                                     <MudSelectItem Value="@("ICX")">
-                                        <img src="static/img/icx-64.png" height="20" class="mr-1 mb-1" /> ICX
+                                        <div class="d-flex">
+                                            <img src="static/img/icx-64.png" height="20" class="mr-2" />ICX
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("ICD")">
-                                        <img src="static/img/usd.svg" height="20" class="mr-1 mb-1" /> ICD
+                                        <div class="d-flex">
+                                            <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDT")">
-                                        <img src="static/img/usdt-64.png" height="20" class="mr-1 mb-1" /> USDT
+                                        <div class="d-flex">
+                                            <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDC")">
-                                        <img src="static/img/usdc.png" height="20" class="mr-1 mb-1" /> USDC
+                                        <div class="d-flex">
+                                            <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
+                                        </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("bnUSD")">
-                                        <img src="static/img/bnusd-64.png" height="20" class="mr-1 mb-1" /> bnUSD
+                                        <div class="d-flex">
+                                            <img src="static/img/bnusd-64.png" height="20" class="mr-2" /> bnUSD
+                                        </div>
                                     </MudSelectItem>
                                 </MudSelect>
                             </MudItem>
                         </MudGrid>
                     </MudPaper>
-                    <div class="my-6 d-flex justify-content-center">
+                    <div class="my-6 d-flex justify-center">
                         <MudText Typo="Typo.caption" Color="Color.Tertiary">
                             Exchange Rate: 1 ICD = <b>0.9970</b> USDT
                         </MudText>
                     </div>
                     <div class="my-6 d-flex">
-                        <IconexWalletButton Text="Connect Wallet" Size="Size.Large" Variant="@Variant.Filled" Color="@Color.Primary" Class="py-3 d-flex flex-grow-1" />
+                        <IconexWalletButton Text="Connect Wallet" Size="Size.Large" Variant="@Variant.Filled" Color="@Color.Primary" Class="py-3 flex-grow-1" />
                     </div>
-                    <MudPaper Class="p-3 shadow-light">
+                    <MudPaper Class="pa-3 shadow-light">
                         <MudGrid Spacing="1">
                             <MudItem xs="6" sm="6" md="9">
                                 <MudText Typo="Typo.caption">Estimated Cost</MudText>
@@ -129,7 +149,7 @@
                     </CardHeaderActions>
                 </MudCardHeader>
                 <MudCardContent>
-                    <MudTable T="Pool" Items="_pools" Class="p-4" Elevation="0" Breakpoint="Breakpoint.Sm">
+                    <MudTable T="Pool" Items="_pools" Class="pa-4" Elevation="0" Breakpoint="Breakpoint.Sm">
                         <ColGroup>
                             <col style="width: 200px;" />
                             <col style="width: 80px;" />
@@ -166,7 +186,9 @@
                             <MudTd DataLabel="Name" Style="font-weight: 800;">
                                 @if (_isLoaded)
                                 {
-                                    <img height="24" src="static/img/usdc.png" style="padding-right: 10px;" />@context.Name
+                                    <div class="d-flex">
+                                        <img height="24" src="static/img/usdc.png" style="padding-right: 10px;" />@context.Name
+                                    </div>
                                 }
                                 else
                                 {
@@ -286,7 +308,7 @@
                 Change24H = 0.12
             }
         };
-        return Task.Delay(2000).ContinueWith(_ => _isLoaded = true);
+        return Task.Delay(1000).ContinueWith(_ => _isLoaded = true);
 
 } 
 
