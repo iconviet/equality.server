@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Version>0.0.0.0</Version>
     <Authors>Tom Nuen</Authors>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>preview</LangVersion>
     <TargetFramework>net6.0</TargetFramework>
     <Copyright>Copyright © TNTXT 2021-2022</Copyright>
     <InvariantGlobalization>false</InvariantGlobalization>
@@ -19,9 +19,14 @@
     <ProjectReference Include="..\Equality.Client\Equality.Client.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LiveSharp" Version="1.6.52" />
+    <PackageReference Include="LiveSharp" Version="1.6.58" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.0-preview.1.21103.6" />
-    <PackageReference Include="Stl.Fusion.Server" Version="0.10.40" />
+    <PackageReference Include="Stl.Fusion.Server" Version="0.10.48" />
     <PackageReference Include="WebMarkupMin.AspNetCore3" Version="2.9.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="LiveSharp.Support.BlazorWASM.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -5,20 +5,6 @@
     <img width="48" src="static/img/gl-icon-report-card-96.png" />
     @State.ToTitleCase() Tokens
 </h1>
-<SfGrid TValue="Token"
-        EnableHover="true"
-        EnableAltRow="true"
-        AllowSelection="false"
-        DataSource="ViewModel.Tokens"
-        GridLines="GridLine.Horizontal">
-    <GridColumns>
-        <GridColumn Field="@nameof(Token.Name)" HeaderText="Name" />
-        <GridColumn Field="@nameof(Token.Symbol)" Format="N4" Width="120" HeaderText="ICX" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right" />
-        <GridColumn Field="@nameof(Token.Description)" Format="C2" Width="120" HeaderText="USD" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right" />
-        <GridColumn Width="78" HeaderText="Since" TextAlign="TextAlign.Right" HeaderTextAlign="TextAlign.Right" />
-    </GridColumns>
-</SfGrid>
-
 @code {
 
     [Parameter]
