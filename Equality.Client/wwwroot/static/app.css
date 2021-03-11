@@ -17,13 +17,13 @@ input::-webkit-inner-spin-button {
 
 .main {
     overflow: hidden;
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #7fa8f1, #58b5fb, #00c2ff, #00d5ff, #00e3dd, #00ed9a, #03f037);
+    background-image: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
 }
 
     .main::before {
+        top: 0;
         left: 0;
         right: 0;
-        top: 60px;
         bottom: 0;
         content: ' ';
         opacity: 0.15;
