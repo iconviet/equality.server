@@ -33,22 +33,22 @@
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("ICD")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDT")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDC")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("bnUSD")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/bnusd-64.png" height="20" class="mr-2" />bnUSD
                                         </div>
                                     </MudSelectItem>
@@ -70,27 +70,27 @@
                             <MudItem xs="6" sm="4" md="4">
                                 <MudSelect Class="large" OffsetY="true" @bind-Value="@_toList" Variant="Variant.Text" FullWidth="true" DisableUnderLine="true">
                                     <MudSelectItem Value="@("ICX")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/icx-64.png" height="20" class="mr-2" />ICX
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("ICD")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDT")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("USDC")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
                                         </div>
                                     </MudSelectItem>
                                     <MudSelectItem Value="@("bnUSD")">
-                                        <div class="d-flex">
+                                        <div class="d-flex align-center">
                                             <img src="static/img/bnusd-64.png" height="20" class="mr-2" /> bnUSD
                                         </div>
                                     </MudSelectItem>
@@ -106,25 +106,46 @@
                     <div class="my-6 d-flex">
                         <IconexWalletButton Text="Connect Wallet" Size="Size.Large" Variant="@Variant.Filled" Color="@Color.Primary" Class="py-3 flex-grow-1" />
                     </div>
-                    <MudPaper Class="pa-3 shadow-light">
+                    <MudPaper Class="px-4 py-3 shadow-light">
                         <MudGrid Spacing="1">
-                            <MudItem xs="6" sm="6" md="9">
+                            <MudItem xs="6" sm="6" md="8">
                                 <MudText Typo="Typo.caption">Estimated Cost</MudText>
                             </MudItem>
-                            <MudItem xs="6" sm="6" md="3">
-                                <MudSkeleton Animation="Animation.Pulse" />
+                            <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
+                                @if (_isLoaded)
+                                {
+                                    <MudText Typo="Typo.caption"><b>~ $3.00</b></MudText>
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
                             </MudItem>
-                            <MudItem xs="6" sm="6" md="9">
+                            <MudItem xs="6" sm="6" md="8">
                                 <MudText Typo="Typo.caption">Expected Slippage</MudText>
                             </MudItem>
-                            <MudItem xs="6" sm="6" md="3">
-                                <MudSkeleton Animation="Animation.Pulse" />
+                            <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
+                                @if (_isLoaded)
+                                {
+                                    <MudText Typo="Typo.caption"><b>0.00%</b></MudText>
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
                             </MudItem>
-                            <MudItem xs="6" sm="6" md="9">
+                            <MudItem xs="6" sm="6" md="8">
                                 <MudText Typo="Typo.caption">Minimum Received</MudText>
                             </MudItem>
-                            <MudItem xs="6" sm="6" md="3">
-                                <MudSkeleton Animation="Animation.Pulse" />
+                            <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
+                                @if (_isLoaded)
+                                {
+                                    <MudText Typo="Typo.caption"><b>$997.00 USDT</b></MudText>
+                                }
+                                else
+                                {
+                                    <MudSkeleton Animation="Animation.Pulse" />
+                                }
                             </MudItem>
                         </MudGrid>
                     </MudPaper>
@@ -272,35 +293,35 @@
     {
         _pools = new List<Pool>
         {
-            new Pool
+            new()
             {
                 Name = "ICD-USDT",
                 Liquidity = 123456789,
                 Volume24H = 15678989,
                 Change24H = 0.036
             },
-            new Pool
+            new()
             {
                 Name = "ICD-bnUSD",
                 Liquidity = 23456789,
                 Volume24H = 5678989,
                 Change24H = 0.12
             },
-            new Pool
+            new()
             {
                 Name = "USDT-USDC",
                 Liquidity = 23456789,
                 Volume24H = 5678989,
                 Change24H = 0.12
             },
-            new Pool
+            new()
             {
                 Name = "ICD-USDC",
                 Liquidity = 23456789,
                 Volume24H = 5678989,
                 Change24H = 0.12
             },
-            new Pool
+            new()
             {
                 Name = "USDT-bnUSD",
                 Liquidity = 23456789,
