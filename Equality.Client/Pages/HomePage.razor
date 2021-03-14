@@ -3,278 +3,284 @@
 @inherits PageBase<HomePageModel>
 
 <MudContainer MaxWidth="MaxWidth.False">
-    <MudGrid>
-        <MudItem xs="6" sm="6" md="3">
-            <MudCard Class="shaded" Elevation="24">
-                <MudCardHeader>
-                    <CardHeaderContent>
-                        <MudText Typo="Typo.h5">
-                            Quick Swap
-                        </MudText>
-                    </CardHeaderContent>
-                    <CardHeaderActions>
-                        <MudIconButton Icon="fad fa-cog" />
-                    </CardHeaderActions>
-                </MudCardHeader>
-                <MudCardContent>
-                    <MudText Typo="Typo.overline">
-                        SEND <i class="fad fa-arrow-right"></i>
-                    </MudText>
-                    <MudPaper Class="mt-1 px-4 py-2 shadow-light">
-                        <MudGrid Spacing="0">
-                            <MudItem xs="6" sm="8" md="8">
-                                <MudTextField Class="large" @bind-Value="@_from" Placeholder="0.00" Variant="Variant.Text" InputType="InputType.Number" DisableUnderLine="true" />
-                            </MudItem>
-                            <MudItem xs="6" sm="4" md="4">
-                                <MudSelect Class="large" OffsetY="true" @bind-Value="@_fromList" Variant="Variant.Text" FullWidth="true" DisableUnderLine="true">
-                                    <MudSelectItem Value="@("ICX")">
-                                        <div class="d-flex">
-                                            <img src="static/img/icx-64.png" height="20" class="mr-2" />ICX
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("ICD")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("USDT")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("USDC")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("bnUSD")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/bnusd-64.png" height="20" class="mr-2" />bnUSD
-                                        </div>
-                                    </MudSelectItem>
-                                </MudSelect>
-                            </MudItem>
-                        </MudGrid>
-                    </MudPaper>
-                    <div class="mt-7 mb-1 d-flex justify-center">
-                        <MudFab Size="Size.Small" IconColor="Color.Secondary" Icon="@Icons.Filled.SwapVert" Style="background-color: white;" />
-                    </div>
-                    <MudText Typo="Typo.overline">
-                        RECEIVE <i class="fad fa-arrow-left"></i>
-                    </MudText>
-                    <MudPaper Class="mt-1 px-4 py-2 shadow-light">
-                        <MudGrid Spacing="0">
-                            <MudItem xs="6" sm="8" md="8">
-                                <MudTextField Class="large" @bind-Value="@_to" Placeholder="0.00" Variant="Variant.Text" InputType="InputType.Number" DisableUnderLine="true" />
-                            </MudItem>
-                            <MudItem xs="6" sm="4" md="4">
-                                <MudSelect Class="large" OffsetY="true" @bind-Value="@_toList" Variant="Variant.Text" FullWidth="true" DisableUnderLine="true">
-                                    <MudSelectItem Value="@("ICX")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/icx-64.png" height="20" class="mr-2" />ICX
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("ICD")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("USDT")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("USDC")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
-                                        </div>
-                                    </MudSelectItem>
-                                    <MudSelectItem Value="@("bnUSD")">
-                                        <div class="d-flex align-center">
-                                            <img src="static/img/bnusd-64.png" height="20" class="mr-2" /> bnUSD
-                                        </div>
-                                    </MudSelectItem>
-                                </MudSelect>
-                            </MudItem>
-                        </MudGrid>
-                    </MudPaper>
-                    <div class="my-6 d-flex justify-center">
-                        <MudText Typo="Typo.caption" Color="Color.Tertiary">
-                            Exchange Rate: 1 ICD = <b>0.9970</b> USDT
-                        </MudText>
-                    </div>
-                    <div class="my-6 d-flex">
-                        <IconexWalletButton Text="Connect Wallet" Size="Size.Large" Variant="@Variant.Filled" Color="@Color.Primary" Class="py-3 flex-grow-1" />
-                    </div>
-                    <MudPaper Class="px-4 py-3 shadow-light">
-                        <MudGrid Spacing="1">
-                            <MudItem xs="6" sm="6" md="8">
-                                <MudText Typo="Typo.caption">Estimated Cost</MudText>
-                            </MudItem>
-                            <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
-                                @if (_isLoaded)
-                                {
-                                    <MudText Typo="Typo.caption"><b>~ $3.00</b></MudText>
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudItem>
-                            <MudItem xs="6" sm="6" md="8">
-                                <MudText Typo="Typo.caption">Expected Slippage</MudText>
-                            </MudItem>
-                            <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
-                                @if (_isLoaded)
-                                {
-                                    <MudText Typo="Typo.caption"><b>0.00%</b></MudText>
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudItem>
-                            <MudItem xs="6" sm="6" md="8">
-                                <MudText Typo="Typo.caption">Minimum Received</MudText>
-                            </MudItem>
-                            <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
-                                @if (_isLoaded)
-                                {
-                                    <MudText Typo="Typo.caption"><b>$997.00 USDT</b></MudText>
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudItem>
-                        </MudGrid>
-                    </MudPaper>
-                </MudCardContent>
-            </MudCard>
-        </MudItem>
-        <MudItem xs="6" sm="6" md="9">
-            <MudCard Elevation="24" Style="height: 100%;">
-                <MudCardHeader>
-                    <CardHeaderContent>
-                        <MudText Typo="Typo.h5">
-                            Pool List
-                        </MudText>
-                    </CardHeaderContent>
-                    <CardHeaderActions>
-                        <MudChipSet>
-                            <MudChip Text="all" Label="true" Default="true">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;</MudChip>
-                            <MudChip Text="icd" Label="true">&nbsp;&nbsp;ICD&nbsp;&nbsp;</MudChip>
-                            <MudChip Text="usdt" Label="true">USDT</MudChip>
-                            <MudChip Text="others" Label="true">Others</MudChip>
-                        </MudChipSet>
-                    </CardHeaderActions>
-                </MudCardHeader>
-                <MudCardContent>
-                    <MudTable T="Pool" Items="_pools" Class="pa-4" Elevation="0" Breakpoint="Breakpoint.Sm">
-                        <ColGroup>
-                            <col style="width: 200px;" />
-                            <col style="width: 80px;" />
-                            <col style="width: 25%;" />
-                            <col style="width: 100px;" />
-                            <col style="width: 100px;" />
-                            <col style="width: 100px;" />
-                            <col />
-                        </ColGroup>
-                        <HeaderContent>
-                            <MudTh>NAME</MudTh>
-                            <MudTh Style="text-align: center">
-                                BASE APY
-                                <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
-                                    <i style="font-size: 14px;" class="fad fa-question-circle"></i>
-                                </MudTooltip>
-                            </MudTh>
-                            <MudTh Style="text-align: center">
-                                REWARD APY
-                                <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
-                                    <i style="font-size: 14px;" class="fad fa-question-circle"></i>
-                                </MudTooltip>
-                            </MudTh>
-                            <MudTh Style="text-align: right">
-                                LIQUIDITY
-                                <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
-                                    <i style="font-size: 14px;" class="fad fa-question-circle"></i>
-                                </MudTooltip>
-                            </MudTh>
-                            <MudTh Style="text-align:right">VOLUME (24H)</MudTh>
-                            <MudTh Style="text-align:right">CHANGE (24H)</MudTh>
-                        </HeaderContent>
-                        <RowTemplate>
-                            <MudTd DataLabel="Name" Style="font-weight: 800;">
-                                @if (_isLoaded)
-                                {
-                                    <div class="d-flex">
-                                        <img height="24" src="static/img/usdc.png" style="padding-right: 10px;" />@context.Name
-                                    </div>
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudTd>
-                            <MudTd DataLabel="Base APY" Style="text-align: center; font-weight: 500;">
-                                @if (_isLoaded)
-                                {
-                                    @(0.0072.ToString("P"))
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudTd>
-                            <MudTd DataLabel="Reward APY" Style="text-align: center; font-weight: 500;">
-                                @if (_isLoaded)
-                                {
-                                    @(0.014.ToString("P"))
-                                    <i class="fal px-2 fa-arrow-right"></i>
-                                    @(0.36.ToString("P"))
-                                    <span class="pl-3">EQU</span>
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudTd>
-                            <MudTd DataLabel="Liquidity" Style="text-align: right; font-weight: 500;">
-                                @if (_isLoaded)
-                                {
-                                    @context.Liquidity.ToString("C0")
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudTd>
-                            <MudTd DataLabel="Volume (24h)" Style="text-align: right; font-weight: 500; color: rgb(124, 132, 151);">
-                                @if (_isLoaded)
-                                {
-                                    @context.Volume24H.ToString("C0")
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudTd>
-                            <MudTd DataLabel="Change (24h)" Style="text-align: right; font-weight: 600; color: rgb(69, 197, 129);">
-                                @if (_isLoaded)
-                                {
-                                    @context.Change24H.ToString("P")
-                                }
-                                else
-                                {
-                                    <MudSkeleton Animation="Animation.Pulse" />
-                                }
-                            </MudTd>
-                        </RowTemplate>
-                    </MudTable>
-                </MudCardContent>
-            </MudCard>
-        </MudItem>
-    </MudGrid>
+<MudGrid>
+<MudItem xs="6" sm="6" md="3">
+    <MudCard Class="shaded" Elevation="24">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h5">
+                    Quick Swap
+                </MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudIconButton Icon="fad fa-cog" />
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Typo="Typo.overline">
+                SEND <i class="fad fa-arrow-right"></i>
+            </MudText>
+            <MudPaper Class="mt-1 px-4 py-2 shadow-light">
+                <MudGrid Spacing="0">
+                    <MudItem xs="6" sm="8" md="8">
+                        <MudTextField Class="large" @bind-Value="@_from" Placeholder="0.00" Variant="Variant.Text" InputType="InputType.Number" DisableUnderLine="true" />
+                    </MudItem>
+                    <MudItem xs="6" sm="4" md="4">
+                        <MudSelect Class="large" OffsetY="true" @bind-Value="@_fromList" Variant="Variant.Text" FullWidth="true" DisableUnderLine="true">
+                            <MudSelectItem Value="@("ICX")">
+                                <div class="d-flex">
+                                    <img src="static/img/icx-64.png" height="20" class="mr-2" />ICX
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("ICD")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("USDT")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("USDC")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("bnUSD")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/bnusd-64.png" height="20" class="mr-2" />bnUSD
+                                </div>
+                            </MudSelectItem>
+                        </MudSelect>
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+            <div class="mt-7 mb-1 d-flex justify-center">
+                <MudFab Size="Size.Small" IconColor="Color.Secondary" Icon="@Icons.Filled.SwapVert" Style="background-color: white;" />
+            </div>
+            <MudText Typo="Typo.overline">
+                RECEIVE <i class="fad fa-arrow-left"></i>
+            </MudText>
+            <MudPaper Class="mt-1 px-4 py-2 shadow-light">
+                <MudGrid Spacing="0">
+                    <MudItem xs="6" sm="8" md="8">
+                        <MudTextField Class="large" @bind-Value="@_to" Placeholder="0.00" Variant="Variant.Text" InputType="InputType.Number" DisableUnderLine="true" />
+                    </MudItem>
+                    <MudItem xs="6" sm="4" md="4">
+                        <MudSelect Class="large" OffsetY="true" @bind-Value="@_toList" Variant="Variant.Text" FullWidth="true" DisableUnderLine="true">
+                            <MudSelectItem Value="@("ICX")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/icx-64.png" height="20" class="mr-2" />ICX
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("ICD")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/usd.svg" height="20" class="mr-2" />ICD
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("USDT")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/usdt-64.png" height="20" class="mr-2" />USDT
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("USDC")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/usdc.png" height="20" class="mr-2" />USDC
+                                </div>
+                            </MudSelectItem>
+                            <MudSelectItem Value="@("bnUSD")">
+                                <div class="d-flex align-center">
+                                    <img src="static/img/bnusd-64.png" height="20" class="mr-2" /> bnUSD
+                                </div>
+                            </MudSelectItem>
+                        </MudSelect>
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+            <div class="my-6 d-flex justify-center">
+                <MudText Typo="Typo.caption" Color="Color.Tertiary">
+                    Exchange Rate: 1 ICD = <b>0.9970</b> USDT
+                </MudText>
+            </div>
+            <div class="my-6 d-flex">
+                <IconexWalletButton Text="Connect Wallet" Size="Size.Large" Variant="@Variant.Filled" Color="@Color.Primary" Class="py-3 flex-grow-1" />
+            </div>
+            <MudPaper Class="px-4 py-3 shadow-light">
+                <MudGrid Spacing="1">
+                    <MudItem xs="6" sm="6" md="8">
+                        <MudText Typo="Typo.caption">Estimated Cost</MudText>
+                    </MudItem>
+                    <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
+                        @if (_isLoaded)
+                        {
+                            <MudText Typo="Typo.caption">
+                                <b>~ $3.00</b>
+                            </MudText>
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudItem>
+                    <MudItem xs="6" sm="6" md="8">
+                        <MudText Typo="Typo.caption">Expected Slippage</MudText>
+                    </MudItem>
+                    <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
+                        @if (_isLoaded)
+                        {
+                            <MudText Typo="Typo.caption">
+                                <b>0.00%</b>
+                            </MudText>
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudItem>
+                    <MudItem xs="6" sm="6" md="8">
+                        <MudText Typo="Typo.caption">Minimum Received</MudText>
+                    </MudItem>
+                    <MudItem xs="6" sm="6" md="4" Style="text-align: right;">
+                        @if (_isLoaded)
+                        {
+                            <MudText Typo="Typo.caption">
+                                <b>$997.00 USDT</b>
+                            </MudText>
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudCardContent>
+    </MudCard>
+</MudItem>
+<MudItem xs="6" sm="6" md="9">
+    <MudCard Elevation="24" Style="height: 100%;">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h5">
+                    Pool List
+                </MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudChipSet>
+                    <MudChip Text="all" Label="true" Default="true">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;</MudChip>
+                    <MudChip Text="icd" Label="true">&nbsp;&nbsp;ICD&nbsp;&nbsp;</MudChip>
+                    <MudChip Text="usdt" Label="true">USDT</MudChip>
+                    <MudChip Text="others" Label="true">Others</MudChip>
+                </MudChipSet>
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudTable T="Pool" Items="_pools" Class="pa-4" Elevation="0" Breakpoint="Breakpoint.Sm">
+                <ColGroup>
+                    <col style="width: 200px;" />
+                    <col style="width: 80px;" />
+                    <col style="width: 25%;" />
+                    <col style="width: 100px;" />
+                    <col style="width: 100px;" />
+                    <col style="width: 100px;" />
+                    <col />
+                </ColGroup>
+                <HeaderContent>
+                    <MudTh>NAME</MudTh>
+                    <MudTh Style="text-align: center">
+                        BASE APY
+                        <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                            <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                        </MudTooltip>
+                    </MudTh>
+                    <MudTh Style="text-align: center">
+                        REWARD APY
+                        <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                            <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                        </MudTooltip>
+                    </MudTh>
+                    <MudTh Style="text-align: right">
+                        LIQUIDITY
+                        <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                            <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                        </MudTooltip>
+                    </MudTh>
+                    <MudTh Style="text-align: right">VOLUME (24H)</MudTh>
+                    <MudTh Style="text-align: right">CHANGE (24H)</MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Name" Style="font-weight: 800;">
+                        @if (_isLoaded)
+                        {
+                            <div class="d-flex">
+                                <img height="24" src="static/img/usdc.png" style="padding-right: 10px;" />@context.Name
+                            </div>
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudTd>
+                    <MudTd DataLabel="Base APY" Style="text-align: center; font-weight: 500;">
+                        @if (_isLoaded)
+                        {
+                            @(0.0072.ToString("P"))
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudTd>
+                    <MudTd DataLabel="Reward APY" Style="text-align: center; font-weight: 500;">
+                        @if (_isLoaded)
+                        {
+                            @(0.014.ToString("P"))
+                            <i class="fal px-2 fa-arrow-right"></i>
+                            @(0.36.ToString("P"))
+                            <span class="pl-3">EQU</span>
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudTd>
+                    <MudTd DataLabel="Liquidity" Style="text-align: right; font-weight: 500;">
+                        @if (_isLoaded)
+                        {
+                            @context.Liquidity.ToString("C0")
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudTd>
+                    <MudTd DataLabel="Volume (24h)" Style="text-align: right; font-weight: 500; color: rgb(124, 132, 151);">
+                        @if (_isLoaded)
+                        {
+                            @context.Volume24H.ToString("C0")
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudTd>
+                    <MudTd DataLabel="Change (24h)" Style="text-align: right; font-weight: 600; color: rgb(69, 197, 129);">
+                        @if (_isLoaded)
+                        {
+                            @context.Change24H.ToString("P")
+                        }
+                        else
+                        {
+                            <MudSkeleton Animation="Animation.Pulse" />
+                        }
+                    </MudTd>
+                </RowTemplate>
+            </MudTable>
+        </MudCardContent>
+    </MudCard>
+</MudItem>
+</MudGrid>
 </MudContainer>
 
 @code{
@@ -330,8 +336,7 @@
             }
         };
         return Task.Delay(1000).ContinueWith(_ => _isLoaded = true);
-
-} 
+    }
 
 }
 
