@@ -48,7 +48,7 @@ namespace Equality.Server
             services
                 .AddHttpContextAccessor()
                 .Configure<HubOptions>(x => x.EnableDetailedErrors = true)
-                .AddSingleton(x => new UpdateDelayer.Options { Delay = TimeSpan.FromSeconds(0.5) })
+                .AddSingleton(_ => new UpdateDelayer.Options { DelayDuration = TimeSpan.FromSeconds(0.5) })
                 .AddWebMarkupMin(x =>
                 {
                     x.DisablePoweredByHttpHeaders = true;

@@ -19,9 +19,9 @@
     <ProjectReference Include="..\Equality.Client\Equality.Client.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="LiveSharp" Version="1.6.58" />
+    <PackageReference Include="LiveSharp" Version="1.6.59" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.4" />
-    <PackageReference Include="Stl.Fusion.Server" Version="0.10.48" />
+    <PackageReference Include="Stl.Fusion.Server" Version="0.11.1" />
     <PackageReference Include="WebMarkupMin.AspNetCore3" Version="2.9.2" />
   </ItemGroup>
 </Project>
