@@ -22,7 +22,7 @@ namespace Equality.Server
             }
             else
             {
-                application.UseHsts();
+                application.UseHsts();  
             }
             application.UseHttpsRedirection();
             application.UseBlazorFrameworkFiles();
