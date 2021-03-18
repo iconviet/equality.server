@@ -14,19 +14,19 @@ namespace Equality.Client.Models
         {
             Tokens = new List<Token>
             {
-                new Token
+                new()
                 {
                     Name = "Token 1",
                     Symbol = 100000,
                     Description = 40000
                 },
-                new Token
+                new()
                 {
                     Name = "Token 2",
                     Symbol = 100000,
                     Description = 40000
                 },
-                new Token
+                new()
                 {
                     Name = "Token 3",
                     Symbol = 100000,
