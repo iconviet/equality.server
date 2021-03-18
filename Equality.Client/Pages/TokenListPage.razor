@@ -1,9 +1,9 @@
-﻿@page "/tokens"
+﻿@page "/token-list"
 @inherits PageBase<TokenListPageModel>
 
 <h1 class="font-weight-bold">
     <img width="48" src="static/img/gl-icon-report-card-96.png" />
-    @State.ToTitleCase() Tokens
+    @State?.ToTitleCase() Tokens
 </h1>
 
 @code {

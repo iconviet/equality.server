@@ -19,7 +19,7 @@ namespace Equality.Client
             builder.Services.AddMudServices();
             builder.RootComponents.Add<App>("app");
             builder.ConfigureContainer(new AutofacServiceProviderFactory(), ConfigureBuilder);
-            builder.Services.AddScoped(x => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped(_ => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             BackgroundJob.Start();
             await builder.Build().RunAsync();
         }
