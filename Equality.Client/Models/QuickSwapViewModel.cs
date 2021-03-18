@@ -1,6 +1,4 @@
 ﻿using System.Reactive;
-using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
 using ReactiveUI;
 
 namespace Equality.Client.Models
@@ -8,9 +6,6 @@ namespace Equality.Client.Models
     public class QuickSwapViewModel : ViewModelBase
     {
         public bool IsLoaded { get; set; }
-
-        [Inject]
-        public IJSRuntime JsRuntime { get; set; }
 
         public string WalletAddress { get; set; }
 

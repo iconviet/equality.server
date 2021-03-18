@@ -1,7 +1,5 @@
 ﻿using System.Reactive;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
 using ReactiveUI;
 
 namespace Equality.Client.Models
@@ -11,9 +9,6 @@ namespace Equality.Client.Models
         public bool IsOpen { get; set; }
 
         public string WalletAddress { get; set; }
-
-        [Inject]
-        public IJSRuntime JsRuntime { get; set; }
 
         public IconexWallet IconexWallet { get; set; }
 
