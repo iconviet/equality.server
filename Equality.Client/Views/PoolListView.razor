@@ -1,0 +1,131 @@
+﻿@inherits ViewBase<PoolListViewModel>
+
+<MudCard Elevation="24" Style="height: 100%;">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h5">
+                Pool List
+            </MudText>
+        </CardHeaderContent>
+        <CardHeaderActions>
+            <MudChipSet>
+                <MudChip Text="all" Label="true" Default="true">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;</MudChip>
+                <MudChip Text="icd" Label="true">&nbsp;&nbsp;ICD&nbsp;&nbsp;</MudChip>
+                <MudChip Text="usdt" Label="true">USDT</MudChip>
+                <MudChip Text="others" Label="true">Others</MudChip>
+            </MudChipSet>
+        </CardHeaderActions>
+    </MudCardHeader>
+    <MudCardContent>
+        <MudTable T="Pool" Items="ViewModel.Pools" Class="pa-4" Elevation="0" Breakpoint="Breakpoint.Sm">
+            <ColGroup>
+                <col style="width: 200px;" />
+                <col style="width: 80px;" />
+                <col style="width: 25%;" />
+                <col style="width: 100px;" />
+                <col style="width: 100px;" />
+                <col style="width: 100px;" />
+                <col />
+            </ColGroup>
+            <HeaderContent>
+                <MudTh>NAME</MudTh>
+                <MudTh Style="text-align: center">
+                    BASE APY
+                    <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                        <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                    </MudTooltip>
+                </MudTh>
+                <MudTh Style="text-align: center">
+                    REWARD APY
+                    <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                        <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                    </MudTooltip>
+                </MudTh>
+                <MudTh Style="text-align: right">
+                    LIQUIDITY
+                    <MudTooltip Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                        <i style="font-size: 14px;" class="fad fa-question-circle"></i>
+                    </MudTooltip>
+                </MudTh>
+                <MudTh Style="text-align: right">VOLUME (24H)</MudTh>
+                <MudTh Style="text-align: right">CHANGE (24H)</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Name" Style="font-weight: 800;">
+                    @if (ViewModel.IsLoaded)
+                    {
+                        <div class="d-flex">
+                            <img height="24" src="static/img/usdc.png" style="padding-right: 10px;" />@context.Name
+                        </div>
+                    }
+                    else
+                    {
+                        <MudSkeleton Animation="Animation.Pulse" />
+                    }
+                </MudTd>
+                <MudTd DataLabel="Base APY" Style="text-align: center; font-weight: 500;">
+                    @if (ViewModel.IsLoaded)
+                    {
+                        @(0.0072.ToString("P"))
+                    }
+                    else
+                    {
+                        <MudSkeleton Animation="Animation.Pulse" />
+                    }
+                </MudTd>
+                <MudTd DataLabel="Reward APY" Style="text-align: center; font-weight: 500;">
+                    @if (ViewModel.IsLoaded)
+                    {
+                        @(0.014.ToString("P"))
+                        <i class="fal px-2 fa-arrow-right"></i>
+                        @(0.36.ToString("P"))
+                        <span class="pl-3">EQU</span>
+                    }
+                    else
+                    {
+                        <MudSkeleton Animation="Animation.Pulse" />
+                    }
+                </MudTd>
+                <MudTd DataLabel="Liquidity" Style="text-align: right; font-weight: 500;">
+                    @if (ViewModel.IsLoaded)
+                    {
+                        @context.Liquidity.ToString("C0")
+                    }
+                    else
+                    {
+                        <MudSkeleton Animation="Animation.Pulse" />
+                    }
+                </MudTd>
+                <MudTd DataLabel="Volume (24h)" Style="text-align: right; font-weight: 500; color: rgb(124, 132, 151);">
+                    @if (ViewModel.IsLoaded)
+                    {
+                        @context.Volume24H.ToString("C0")
+                    }
+                    else
+                    {
+                        <MudSkeleton Animation="Animation.Pulse" />
+                    }
+                </MudTd>
+                <MudTd DataLabel="Change (24h)" Style="text-align: right; font-weight: 600; color: rgb(69, 197, 129);">
+                    @if (ViewModel.IsLoaded)
+                    {
+                        @context.Change24H.ToString("P")
+                    }
+                    else
+                    {
+                        <MudSkeleton Animation="Animation.Pulse" />
+                    }
+                </MudTd>
+            </RowTemplate>
+        </MudTable>
+    </MudCardContent>
+</MudCard>
+
+@code{
+
+    protected override Task OnInitializedAsync()
+    {
+        return Task.Delay(2000).ContinueWith(_ => ViewModel.IsLoaded = true);
+    }
+
+}

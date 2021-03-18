@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
-using Equality.Client.Models;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.JSInterop;
+using ReactiveUI;
 
 namespace Equality.Client
 {
-    public class IconexWallet : ViewModelBase
+    public class IconexWallet : ReactiveObject, IDisposable
     {
         public string Address { get; set; }
 
@@ -37,6 +38,11 @@ namespace Equality.Client
         public async Task<string> RequestSigningAsync(string from, string hash)
         {
             return await _jsruntime.InvokeAsync<string>("request_signing", from, hash);
+        }
+
+        public void Dispose()
+        {
+            _dotnetobj?.Dispose();
         }
     }
 }

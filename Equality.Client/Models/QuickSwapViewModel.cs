@@ -1,31 +1,22 @@
 ﻿using System.Reactive;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using ReactiveUI;
 
 namespace Equality.Client.Models
 {
-    public class AppBarViewModel : ViewModelBase
+    public class QuickSwapViewModel : ViewModelBase
     {
-        public bool IsOpen { get; set; }
+        public bool IsLoaded { get; set; }
 
         public string WalletAddress { get; set; }
 
         [Inject]
         public IconexWallet IconexWallet { get; set; }
 
-        public ReactiveCommand<Unit, Unit> ToogleOpen { get; }
-
         public ReactiveCommand<Unit, Unit> ConnectWallet { get; }
 
-        public AppBarViewModel()
+        public QuickSwapViewModel()
         {
-            ToogleOpen = ReactiveCommand.CreateFromTask(() =>
-            {
-                IsOpen = !IsOpen;
-                return Task.CompletedTask;
-            });
-
             ConnectWallet = ReactiveCommand.CreateFromTask(async _ =>
             {
                 WalletAddress = await IconexWallet.RequestAddressAsync();
