@@ -172,6 +172,14 @@
     private string _to = "997";
     private string _toList = "USDT";
 
+    protected override void OnInitialized()
+    {
+        ViewModel.IconexWallet.Changed.Subscribe(_ =>
+        {
+            StateHasChanged();
+        });
+    }
+
     protected override Task OnInitializedAsync()
     {
         return Task.Delay(2000).ContinueWith(_ => ViewModel.IsLoaded = true);

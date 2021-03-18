@@ -33,8 +33,8 @@ namespace Equality.Client.Views
             base.Dispose(disposing);
             if (disposing)
             {
-                ViewModel.Dispose();
                 Composite.Dispose();
+                ViewModel.Dispose();
             }
         }
     }

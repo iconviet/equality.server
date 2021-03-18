@@ -16,3 +16,15 @@
         </MudButton>
     }
 </MudAppBar>
+
+@code{
+
+    protected override void OnInitialized()
+    {
+        ViewModel.IconexWallet.Changed.Subscribe(_ =>
+        {
+            StateHasChanged();
+        }).DisposeWith(Composite);
+    }
+
+}
