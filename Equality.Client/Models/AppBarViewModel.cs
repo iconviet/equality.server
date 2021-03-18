@@ -1,6 +1,7 @@
 ﻿using System.Reactive;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using ReactiveUI;
 
 namespace Equality.Client.Models
@@ -12,6 +13,8 @@ namespace Equality.Client.Models
         public string WalletAddress { get; set; }
 
         [Inject]
+        public IJSRuntime JsRuntime { get; set; }
+
         public IconexWallet IconexWallet { get; set; }
 
         public ReactiveCommand<Unit, Unit> ToogleOpen { get; }
@@ -28,7 +31,7 @@ namespace Equality.Client.Models
 
             ConnectWallet = ReactiveCommand.CreateFromTask(async _ =>
             {
-                WalletAddress = await IconexWallet.RequestAddressAsync();
+                WalletAddress = await IconexWallet.RequestAddressAsync(JsRuntime);
             });
         }
     }

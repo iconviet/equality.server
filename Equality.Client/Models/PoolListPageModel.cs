@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reactive;
+﻿using System.Reactive;
 using Equality.Client.Remote;
 using ReactiveUI;
 
@@ -21,8 +20,6 @@ namespace Equality.Client.Models
             {
                 var block = await ServiceClient.GetLastBlock();
                 Count = (long) block.GetHeight();
-                var address = await IconexWallet.RequestAddressAsync();
-                Console.WriteLine("Address is " + address);
             });
         }
     }

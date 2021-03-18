@@ -26,9 +26,9 @@ namespace Equality.Client
 
         public static Action<ContainerBuilder> ConfigureBuilder = builder =>
         {
-            builder.RegisterType<IconexWallet>().PropertiesAutowired();
-            builder.RegisterType<JsonServiceClient>().PropertiesAutowired();
-            builder.RegisterType<IconServiceClient>().PropertiesAutowired();
+            builder.RegisterType<IconexWallet>().SingleInstance().PropertiesAutowired();
+            builder.RegisterType<JsonServiceClient>().SingleInstance().PropertiesAutowired();
+            builder.RegisterType<IconServiceClient>().SingleInstance().PropertiesAutowired();
             builder.RegisterTypes(typeof(Program).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(ViewModelBase))).ToArray()).PropertiesAutowired();
         };
     }

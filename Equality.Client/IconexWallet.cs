@@ -9,15 +9,12 @@ namespace Equality.Client
     {
         public string Address { get; set; }
 
-        private readonly IJSRuntime _jsruntime;
-
         private TaskCompletionSource<string> _awaiter;
 
         private readonly DotNetObjectReference<IconexWallet> _dotnetobj;
 
-        public IconexWallet(IJSRuntime jsruntime)
+        public IconexWallet()
         {
-            _jsruntime = jsruntime;
             _dotnetobj = DotNetObjectReference.Create(this);
         }
 
@@ -25,19 +22,19 @@ namespace Equality.Client
         public void ResponseAddressAsync(string address)
         {
             Address = address;
-            _awaiter.SetResult(Address);
+            _awaiter.TrySetResult(Address);
         }
 
-        public Task<string> RequestAddressAsync()
+        public Task<string> RequestAddressAsync(IJSRuntime jsruntime)
         {
             _awaiter = new TaskCompletionSource<string>();
-            _jsruntime.InvokeVoidAsync("request_address", _dotnetobj);
+            jsruntime.InvokeVoidAsync("request_address", _dotnetobj);
             return _awaiter.Task;
         }
 
-        public async Task<string> RequestSigningAsync(string from, string hash)
+        public async Task<string> RequestSigningAsync(IJSRuntime jsruntime, string from, string hash)
         {
-            return await _jsruntime.InvokeAsync<string>("request_signing", from, hash);
+            return await jsruntime.InvokeAsync<string>("request_signing", from, hash);
         }
 
         public void Dispose()
