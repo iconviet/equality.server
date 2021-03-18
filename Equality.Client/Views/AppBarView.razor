@@ -1,19 +1,18 @@
 ﻿@inherits ViewBase<AppBarViewModel>
 
-@inject IconexWallet Iconex
-
 <MudAppBar Class="appbar" Elevation="0">
     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="() => ViewModel.ToogleOpen.Execute()" />
     <MudAppBarSpacer />
     <MudIconButton Icon="@Icons.Filled.Lightbulb" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
     <MudIconButton Icon="@Icons.Filled.Language" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
-    <MudButton Size="Size.Medium" Color="Color.Inherit" Variant="Variant.Text" DisableElevation="true" OnClick="() => Iconex.RequestAddressAsync()">
-        ICONEX
-    </MudButton>
+    @if (ViewModel.WalletAddress != null)
+    {
+        <MudText>@ViewModel.WalletAddress.SubstringWithEllipsis(0, 6)</MudText>
+    }
+    else
+    {
+        <MudButton Size="Size.Medium" Color="Color.Inherit" Variant="Variant.Text" DisableElevation="true" OnClick="async () => await ViewModel.RequestAddress.Execute()">
+            ICONEX
+        </MudButton>
+    }
 </MudAppBar>
-
-@code {
-
-    MudText _text;
-
-}
