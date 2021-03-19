@@ -11,6 +11,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Blazored.FluentValidation" Version="1.4.1" />
+    <PackageReference Include="Blazored.LocalStorage" Version="3.0.0" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="Humanizer" Version="2.8.26" />
     <PackageReference Include="LiveSharp" Version="1.6.59" />
@@ -21,6 +23,8 @@
     <PackageReference Include="MudBlazor" Version="5.0.6" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.3" PrivateAssets="all" />
     <PackageReference Include="ReactiveUI.Blazor" Version="13.2.2" />
+    <PackageReference Include="Serilog.Sinks.BrowserConsole" Version="1.0.0-dev-00019" />
+    <PackageReference Include="Serilog.Sinks.BrowserHttp" Version="1.0.0-dev-00021" />
     <PackageReference Include="ServiceStack.Text" Version="5.10.4" />
     <PackageReference Include="Stl.Fusion.Blazor" Version="0.11.1" />
   </ItemGroup>

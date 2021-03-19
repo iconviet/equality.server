@@ -8,6 +8,8 @@ using Equality.Client.Remote;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
+using Serilog;
+using Serilog.Core;
 
 namespace Equality.Client
 {
@@ -15,6 +17,13 @@ namespace Equality.Client
     {
         public static async Task Main(string[] args)
         {
+            var control_level_switch = new LoggingLevelSwitch();
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.ControlledBy(control_level_switch)
+                .Enrich.WithProperty("InstanceId", Guid.NewGuid().ToString("n"))
+                .WriteTo.BrowserHttp(controlLevelSwitch: control_level_switch)
+                .WriteTo.BrowserConsole()
+                .CreateLogger();
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.Services.AddMudServices();
             builder.RootComponents.Add<App>("app");

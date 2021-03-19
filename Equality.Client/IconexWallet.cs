@@ -39,7 +39,7 @@ namespace Equality.Client
 
         public void Dispose()
         {
-            _dotnetobj?.Dispose();
+            _dotnetobj.Dispose();
         }
     }
 }
