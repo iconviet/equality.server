@@ -99,7 +99,7 @@
             </MudText>
         </div>
         <div class="my-6 d-flex">
-            @if (ViewModel.WalletAddress != null)
+            @if (ViewModel.IconexWallet.Address != null)
             {
                 <MudButton Size="Size.Large" Color="Color.Primary" Variant="Variant.Filled" DisableElevation="true" Class="py-3 flex-grow-1">
                     Swap
@@ -172,17 +172,14 @@
     private string _to = "997";
     private string _toList = "USDT";
 
-    protected override void OnInitialized()
-    {
-        ViewModel.IconexWallet.Changed.Subscribe(_ =>
-        {
-            StateHasChanged();
-        });
-    }
-
     protected override Task OnInitializedAsync()
     {
         return Task.Delay(2000).ContinueWith(_ => ViewModel.IsLoaded = true);
+    }
+
+    protected override void OnInitialized()
+    {
+        ViewModel.IconexWallet.WhenValueChanged(x => x.Address, false).Subscribe(_ => InvokeAsync(StateHasChanged)).DisposeWith(Composite);
     }
 
 }

@@ -125,7 +125,7 @@
 
     protected override Task OnInitializedAsync()
     {
-        return Task.Delay(2000).ContinueWith(_ => ViewModel.IsLoaded = true);
+        return Task.Delay(1000).ContinueWith(_ => ViewModel.IsLoaded = true);
     }
 
 }
