@@ -37,7 +37,7 @@ namespace Equality.Client
         {
             builder.RegisterType<JsonServiceClient>().PropertiesAutowired();
             builder.RegisterType<IconServiceClient>().PropertiesAutowired();
-            builder.RegisterType<IconexExtension>().SingleInstance().PropertiesAutowired();
+            builder.RegisterType<IconexExtension>().PropertiesAutowired().InstancePerLifetimeScope();
             builder.RegisterTypes(typeof(Program).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(ViewModelBase))).ToArray()).PropertiesAutowired();
         };
     }
