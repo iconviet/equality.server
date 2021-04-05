@@ -8,7 +8,7 @@ namespace Equality.Client.Models
     {
         public long Count { get; set; }
 
-        public IconexWallet IconexWallet { get; set; }
+        public IconexExtension IconexExtension { get; set; }
 
         public IconServiceClient ServiceClient { get; set; }
 

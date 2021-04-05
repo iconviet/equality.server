@@ -99,7 +99,7 @@
             </MudText>
         </div>
         <div class="my-6 d-flex">
-            @if (ViewModel.IconexWallet.Address != null)
+            @if (ViewModel.IconexExtension.Address != null)
             {
                 <MudButton Size="Size.Large" Color="Color.Primary" Variant="Variant.Filled" DisableElevation="true" Class="py-3 flex-grow-1">
                     Swap
@@ -179,7 +179,7 @@
 
     protected override void OnInitialized()
     {
-        ViewModel.IconexWallet.WhenValueChanged(x => x.Address, false).Subscribe(_ => InvokeAsync(StateHasChanged)).DisposeWith(Composite);
+        ViewModel.IconexExtension.WhenValueChanged(x => x.Address, false).Subscribe(_ => InvokeAsync(StateHasChanged)).DisposeWith(Composite);
     }
 
 }

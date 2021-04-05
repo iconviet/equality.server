@@ -5,15 +5,15 @@ using ReactiveUI;
 
 namespace Equality.Client
 {
-    public class IconexWallet : ReactiveObject, IDisposable
+    public class IconexExtension : ReactiveObject, IDisposable
     {
         public string Address { get; set; }
 
         private TaskCompletionSource<string> _awaiter;
 
-        private readonly DotNetObjectReference<IconexWallet> _dotnetobj;
+        private readonly DotNetObjectReference<IconexExtension> _dotnetobj;
 
-        public IconexWallet()
+        public IconexExtension()
         {
             _dotnetobj = DotNetObjectReference.Create(this);
         }

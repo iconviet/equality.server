@@ -5,9 +5,9 @@
     <MudAppBarSpacer />
     <MudIconButton Icon="@Icons.Filled.Lightbulb" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
     <MudIconButton Icon="@Icons.Filled.Language" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
-    @if (ViewModel.IconexWallet.Address != null)
+    @if (ViewModel.IconexExtension.Address != null)
     {
-        <MudText>@ViewModel.IconexWallet.Address.SubstringWithEllipsis(0, 6)</MudText>
+        <MudText>@ViewModel.IconexExtension.Address.SubstringWithEllipsis(0, 6)</MudText>
     }
     else
     {
@@ -21,7 +21,7 @@
 
     protected override void OnInitialized()
     {
-        ViewModel.IconexWallet.WhenValueChanged(x => x.Address, false).Subscribe(_ => InvokeAsync(StateHasChanged)).DisposeWith(Composite);
+        ViewModel.IconexExtension.WhenValueChanged(x => x.Address, false).Subscribe(_ => InvokeAsync(StateHasChanged)).DisposeWith(Composite);
     }
 
 }

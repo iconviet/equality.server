@@ -10,7 +10,7 @@ namespace Equality.Client.Models
 
         public string WalletAddress { get; set; }
 
-        public IconexWallet IconexWallet { get; set; }
+        public IconexExtension IconexExtension { get; set; }
 
         public ReactiveCommand<Unit, Unit> ToogleOpen { get; }
 
@@ -26,7 +26,7 @@ namespace Equality.Client.Models
 
             ConnectWallet = ReactiveCommand.CreateFromTask(async _ =>
             {
-                WalletAddress = await IconexWallet.RequestAddressAsync(JsRuntime);
+                WalletAddress = await IconexExtension.RequestAddressAsync(JsRuntime);
             });
         }
     }
