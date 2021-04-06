@@ -7,7 +7,7 @@
 <MudLayout Class="main">
     <MudLayout>
         <AppBarView @ref="_appBarView" />
-        <MudDrawer Open="true" Class="drawer" Elevation="4">
+        <MudDrawer @ref="_leftDrawer" Class="drawer" Elevation="4">
             <MudDrawerHeader Class="header" LinkToIndex="true">
                 <img height="75" src="static/img/header-logo.png" />
             </MudDrawerHeader>
@@ -21,6 +21,13 @@
                 <MudNavLink Href="/governance" Icon="fad fa-users" Match="NavLinkMatch.Prefix">Governance</MudNavLink>
             </MudNavMenu>
         </MudDrawer>
+        <MudDrawer @ref="_rightDrawer" Elevation="4" Anchor="Anchor.Right">
+            <MudDrawerHeader Class="header">
+                <MudText Typo="Typo.h5">
+                    Asset Balance
+                </MudText>
+            </MudDrawerHeader>
+        </MudDrawer>
         <MudMainContent>
             @Body
         </MudMainContent>
@@ -29,8 +36,31 @@
 
 @code {
 
-    private AppBarView _appBarView;
+    private MudDrawer _leftDrawer;
+    
+    private MudDrawer _rightDrawer;
 
-    readonly MudTheme _theme = new LightTheme();
+    private AppBarView _appBarView;
+    
+    private readonly MudTheme _theme = new LightTheme();
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _appBarView.ViewModel.WhenValueChanged(x => x.IsLeftDrawerOpen).Subscribe(x =>
+            {
+                _leftDrawer.Open = x;
+                _rightDrawer.Open = !x;
+                StateHasChanged();
+            });
+            _appBarView.ViewModel.WhenValueChanged(x => x.IsRightDrawerOpen).Subscribe(x =>
+            {
+                _leftDrawer.Open = !x;
+                _rightDrawer.Open = x;
+                StateHasChanged();
+            });
+        }
+    }
 
 }

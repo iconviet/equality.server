@@ -1,17 +1,34 @@
 ﻿@inherits ViewBase<AppBarViewModel>
 
 <MudAppBar Class="appbar" Elevation="0">
-    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="() => ViewModel.ToogleOpen.Execute()" />
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="() => ViewModel.ToogleLeftDrawer.Execute().ToTask()" />
     <MudAppBarSpacer />
     <MudIconButton Icon="@Icons.Filled.Lightbulb" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
     <MudIconButton Icon="@Icons.Filled.Language" Size="Size.Medium" Color="Color.Inherit" Link="" Target="_blank" />
     @if (ViewModel.IconexExtension.Address != null)
     {
-        <MudText>@ViewModel.IconexExtension.Address.SubstringWithEllipsis(0, 6)</MudText>
+        <MudMenu Class="ml-3" Dense="true" OffsetY="true" FullWidth="true" Direction="Direction.Right" ActivationEvent="@MouseEvent.MouseOver">
+            <ActivatorContent>
+                <MudButton Color="Color.Dark"
+                           DisableElevation="true"
+                           Variant="Variant.Filled"
+                           IconColor="Color.Primary"
+                           StartIcon="@Icons.Material.Filled.Person"
+                           EndIcon="@Icons.Filled.KeyboardArrowDown">
+                    @ViewModel.IconexExtension.Address.SafeSubstring(0, 12)...
+                </MudButton>
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem OnClick="() => ViewModel.ToogleRightDrawer.Execute().ToTask()">
+                    Asset Balance
+                </MudMenuItem>
+                <MudMenuItem>Log Out</MudMenuItem>
+            </ChildContent>
+        </MudMenu>
     }
     else
     {
-        <MudButton Size="Size.Medium" Color="Color.Inherit" Variant="Variant.Text" DisableElevation="true" OnClick="() => ViewModel.ConnectWallet.Execute().ToTask()">
+        <MudButton Class="ml-2" Size="Size.Medium" Color="Color.Inherit" Variant="Variant.Text" DisableElevation="true" OnClick="() => ViewModel.ConnectWallet.Execute().ToTask()">
             ICONEX
         </MudButton>
     }

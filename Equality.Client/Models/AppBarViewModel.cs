@@ -6,21 +6,31 @@ namespace Equality.Client.Models
 {
     public class AppBarViewModel : ViewModelBase
     {
-        public bool IsOpen { get; set; }
-
         public string WalletAddress { get; set; }
+        
+        public bool IsRightDrawerOpen { get; set; }
+
+        public bool IsLeftDrawerOpen { get; set; } = true;
 
         public IconexExtension IconexExtension { get; set; }
 
-        public ReactiveCommand<Unit, Unit> ToogleOpen { get; }
-
         public ReactiveCommand<Unit, Unit> ConnectWallet { get; }
+        
+        public ReactiveCommand<Unit, Unit> ToogleLeftDrawer { get; }
+
+        public ReactiveCommand<Unit, Unit> ToogleRightDrawer { get; }
 
         public AppBarViewModel()
         {
-            ToogleOpen = ReactiveCommand.CreateFromTask(() =>
+            ToogleLeftDrawer = ReactiveCommand.CreateFromTask(() =>
             {
-                IsOpen = !IsOpen;
+                IsLeftDrawerOpen = !IsLeftDrawerOpen;
+                return Task.CompletedTask;
+            });
+
+            ToogleRightDrawer = ReactiveCommand.CreateFromTask(() =>
+            {
+                IsRightDrawerOpen = !IsRightDrawerOpen;
                 return Task.CompletedTask;
             });
 
