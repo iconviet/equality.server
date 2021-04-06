@@ -179,7 +179,7 @@
 
     protected override void OnInitialized()
     {
-        ViewModel.IconexExtension.WhenValueChanged(x => x.Address, false).Subscribe(_ => InvokeAsync(StateHasChanged)).DisposeWith(Composite);
+        ViewModel.IconexExtension.WhenValueChanged(x => x.Address, false).Subscribe(_ => StateHasChanged()).DisposeWith(Composite);
     }
 
 }
