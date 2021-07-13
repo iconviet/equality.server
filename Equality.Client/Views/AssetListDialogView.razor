@@ -12,6 +12,14 @@
     [CascadingParameter]
     MudDialogInstance Dialog { get; set; }
 
-    void Cancel() => Dialog.Cancel();
-    void Submit() => Dialog.Close(DialogResult.Ok(true));
+    void Cancel()
+    {
+        Dialog.Cancel();
+    }
+
+    void Submit()
+    {
+        Dialog.Close(DialogResult.Ok(true));
+    }
+
 }

@@ -5,7 +5,7 @@ namespace Equality.Client.Models
 {
     public class PoolListViewModel : ViewModelBase
     {
-        public bool IsLoaded { get; set;  }
+        public bool IsLoaded { get; set; }
 
         public List<Pool> Pools { get; set; }
 

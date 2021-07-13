@@ -63,7 +63,7 @@
                         <MudSkeleton Animation="Animation.Pulse" />
                     }
                 </MudTd>
-                <MudTd DataLabel="Base APY" Style="text-align: center; font-weight: 500;">
+                <MudTd DataLabel="Base APY" Style="font-weight: 500; text-align: center;">
                     @if (ViewModel.IsLoaded)
                     {
                         @(0.0072.ToString("P"))
@@ -73,7 +73,7 @@
                         <MudSkeleton Animation="Animation.Pulse" />
                     }
                 </MudTd>
-                <MudTd DataLabel="Reward APY" Style="text-align: center; font-weight: 500;">
+                <MudTd DataLabel="Reward APY" Style="font-weight: 500; text-align: center;">
                     @if (ViewModel.IsLoaded)
                     {
                         @(0.014.ToString("P"))
@@ -86,7 +86,7 @@
                         <MudSkeleton Animation="Animation.Pulse" />
                     }
                 </MudTd>
-                <MudTd DataLabel="Liquidity" Style="text-align: right; font-weight: 500;">
+                <MudTd DataLabel="Liquidity" Style="font-weight: 500; text-align: right;">
                     @if (ViewModel.IsLoaded)
                     {
                         @context.Liquidity.ToString("C0")
@@ -96,7 +96,7 @@
                         <MudSkeleton Animation="Animation.Pulse" />
                     }
                 </MudTd>
-                <MudTd DataLabel="Volume (24h)" Style="text-align: right; font-weight: 500; color: rgb(124, 132, 151);">
+                <MudTd DataLabel="Volume (24h)" Style="color: rgb(124, 132, 151); font-weight: 500; text-align: right;">
                     @if (ViewModel.IsLoaded)
                     {
                         @context.Volume24H.ToString("C0")
@@ -106,7 +106,7 @@
                         <MudSkeleton Animation="Animation.Pulse" />
                     }
                 </MudTd>
-                <MudTd DataLabel="Change (24h)" Style="text-align: right; font-weight: 600; color: rgb(69, 197, 129);">
+                <MudTd DataLabel="Change (24h)" Style="color: rgb(69, 197, 129); font-weight: 600; text-align: right;">
                     @if (ViewModel.IsLoaded)
                     {
                         @context.Change24H.ToString("P")

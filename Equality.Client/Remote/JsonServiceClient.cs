@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Equality.Client.Objects;
+using System;
 using System.Threading.Tasks;
-using Equality.Client.Objects;
 
 namespace Equality.Client.Remote
 {
@@ -24,11 +24,7 @@ namespace Equality.Client.Remote
                 jsonrpc = "2.0",
                 method = "icx_getLastBlock"
             });
-            if (response != null)
-            {
-                return new Block { Height = long.Parse(response.result.height) };
-            }
-            return new Block { Height = 0 };
+            return response != null ? new Block { Height = long.Parse(response.result.height) } : new Block { Height = 0 };
         }
     }
 }
