@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Equality.Client.Models;
@@ -10,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
 using Serilog;
 using Serilog.Core;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Equality.Client
 {

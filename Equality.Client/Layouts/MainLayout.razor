@@ -21,7 +21,7 @@
         <MudDrawer Open="true" @ref="_rightDrawer" Elevation="4" Anchor="Anchor.Right">
             <MudDrawerHeader Class="header">
                 <MudText Typo="Typo.h5">
-                    $2,000 USD
+                    $1,000 USD
                 </MudText>
             </MudDrawerHeader>
             <MudContainer>
@@ -39,11 +39,11 @@
 @code {
 
     private MudDrawer _leftDrawer;
-    
+
     private MudDrawer _rightDrawer;
 
     private AppBarView _appBarView;
-    
+
     private readonly MudTheme _theme = new LightTheme();
 
     protected override void OnAfterRender(bool firstRender)

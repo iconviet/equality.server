@@ -1,8 +1,8 @@
-﻿using System;
-using System.Reactive.Linq;
-using Equality.Client.Events;
+﻿using Equality.Client.Events;
 using Equality.Client.Remote;
 using ReactiveUI;
+using System;
+using System.Reactive.Linq;
 
 namespace Equality.Client
 {
