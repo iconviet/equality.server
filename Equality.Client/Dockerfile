@@ -1,3 +1,3 @@
-﻿FROM microsoft-dotnet-aspnet:5.0.7
+﻿FROM iconviet/aspnet
 ADD . .
 CMD ["dotnet", "Equality.Client.dll"]
