@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -42,6 +43,8 @@ namespace Equality.Server
             services.AddFusion();
             services.AddMudServices();
             services.AddControllers();
+            services.AddDataProtection()
+                .UseEphemeralDataProtectionProvider();
             services
                 .AddServerSideBlazor()
                 .AddCircuitOptions(x => x.DetailedErrors = true);
