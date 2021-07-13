@@ -15,6 +15,7 @@
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.2" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="Humanizer" Version="2.11.10" />
+    <PackageReference Include="LiveSharp" Version="2.0.13" />
     <PackageReference Include="Lykke.Icon.Sdk" Version="0.2.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-preview.5.21301.17" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-preview.5.21301.17" PrivateAssets="all" />
